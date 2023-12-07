@@ -47,7 +47,9 @@
         font-weight: 700;
     }
 
-    &__input {
+    &__input,&__select {
+        width: 100%;
+        box-sizing: border-box;
         padding: 1rem;
         border: 1px solid darken(v.$gris-claro, 20);
         border-radius: .5rem;
@@ -83,6 +85,8 @@
         &--registrar{
             width: 100%;
         }
+
+        
     }
 
 }

@@ -14,4 +14,6 @@ class ComplementariasController
             'titulo' => 'Complementarias de la plataforma'
         ]);
     }
+
+
 }

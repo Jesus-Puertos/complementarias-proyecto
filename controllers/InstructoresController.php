@@ -5,12 +5,30 @@ namespace Controllers;
 use Model\Instructor;
 use MVC\Router;
 use Intervention\Image\ImageManagerStatic as Image;
+use Classes\Paginacion;
 
 class InstructoresController
 {
 
     public static function index(Router $router)
     {
+        $pagina_actual = $_GET['page'];
+        $pagina_actual = filter_var($pagina_actual, FILTER_VALIDATE_INT);
+
+        if (!$pagina_actual || $pagina_actual < 1) {
+            header('Location: /admin/instructores?page=1');
+            exit;
+        }
+        $registros_por_pagina = 5;
+        $total = Instructor::total();
+        $paginacion = new Paginacion($pagina_actual, $registros_por_pagina, $total);
+
+        if ($paginacion->total_paginas() < $pagina_actual) {
+            header('Location: /admin/instructores?page=1');
+            exit;
+        }
+
+        $instructores = Instructor::paginar($registros_por_pagina, $paginacion->offset());
 
 
         if (!is_admin()) {
@@ -26,13 +44,13 @@ class InstructoresController
 
         $alertas = Instructor::getAlertas();
 
-        $instructores = Instructor::all();
 
         // debuguear($instructores);
 
         $router->render('admin/instructores/index', [
             'titulo' => 'Instuctores de la plataforma',
             'instructores' => $instructores,
+            'paginacion' => $paginacion->paginacion(),
 
         ]);
     }

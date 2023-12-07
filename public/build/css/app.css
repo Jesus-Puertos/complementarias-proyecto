@@ -405,15 +405,17 @@ h3 {
   color: rgba(26, 27, 21, 0.8);
   font-weight: 700;
 }
-.formulario__input, .formulario__input--sociales {
+.formulario__input, .formulario__input--sociales, .formulario__select--sociales, .formulario__select {
+  width: 100%;
+  box-sizing: border-box;
   padding: 1rem;
   border: 1px solid #b1c7dd;
   border-radius: 0.5rem;
 }
-.formulario__input--file {
+.formulario__input--file, .formulario__select--file {
   border: none;
 }
-.formulario__input--sociales {
+.formulario__input--sociales, .formulario__select--sociales {
   flex: 1;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -874,9 +876,19 @@ h3 {
   margin: 0 auto;
 }
 
+.tabla-wrapper {
+  overflow-x: auto;
+}
+
 .table {
-  width: 100%;
+  width: auto;
+  min-width: 100%;
   border-collapse: collapse;
+}
+@media (min-width: 768px) {
+  .table .tabla {
+    width: 100%;
+  }
 }
 .table__thead {
   background-color: #1E293B;
@@ -912,5 +924,59 @@ h3 {
 }
 .table__accion:hover {
   cursor: pointer;
+}
+
+.paginacion {
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .paginacion {
+    justify-content: flex-end;
+  }
+}
+.paginacion__enlace {
+  color: #007df4;
+  font-size: 1.8rem;
+}
+.paginacion__enlace--texto {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #007df4;
+}
+.paginacion__enlace--texto:hover {
+  background-color: #007df4;
+  color: #FFFFFF;
+}
+.paginacion__enlace--numero {
+  display: none;
+  font-weight: bold;
+}
+@media (min-width: 768px) {
+  .paginacion__enlace--numero {
+    display: inline;
+  }
+}
+.paginacion__enlace--actual {
+  color: #FFFFFF;
+  font-weight: 700;
+  background-color: #007df4;
+  border-radius: 50%;
+  width: 2rem;
+  text-align: center;
+  display: none;
+}
+@media (min-width: 768px) {
+  .paginacion__enlace--actual {
+    display: inline;
+  }
+}
+.paginacion__enlace--actual:hover {
+  cursor: not-allowed;
 }
 /*# sourceMappingURL=app.css.map */

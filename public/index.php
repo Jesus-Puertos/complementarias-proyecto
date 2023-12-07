@@ -48,6 +48,10 @@ $router->post('/admin/instructores/eliminar', [InstructoresController::class, 'e
 
 
 $router->get('/admin/complementarias', [ComplementariasController::class, 'index']);
+$router->get('/admin/complementarias/crear', [ComplementariasController::class, 'crear']);
+
+
+
 
 $router->get('/admin/registrados', [RegistradosController::class, 'index']);
 
