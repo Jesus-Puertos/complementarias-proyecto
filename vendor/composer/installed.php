@@ -1,6 +1,6 @@
 <?php return array(
     'root' => array(
-        'name' => 'juandelatorre/devwebcamp',
+        'name' => 'jesuspuertos/complementarias',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
         'reference' => 'eba90ece6f569d300e2b5564b002d48a5ee26e35',

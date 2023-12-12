@@ -119,9 +119,9 @@ class ActiveRecord
     }
 
     // Obtener todos los Registros
-    public static function all()
+    public static function all($orden = 'DESC')
     {
-        $query = "SELECT * FROM " . static::$tabla . " ORDER BY id DESC";
+        $query = "SELECT * FROM " . static::$tabla . " ORDER BY id ${orden}";
         $resultado = self::consultarSQL($query);
         return $resultado;
     }
@@ -159,6 +159,19 @@ class ActiveRecord
         return array_shift($resultado);
     }
 
+    //Busqueda Where con multiples opciones
+    public static function whereArray($array = [])
+    {
+        $query = "SELECT * FROM " . static::$tabla . " WHERE";
+        $and = '';
+        foreach ($array as $key => $value) {
+            $query .= $and . " {$key}='{$value}'";
+            $and = " AND";
+        }
+        $resultado = self::consultarSQL($query);
+        return $resultado;
+    }
+
     //Traer un total de registros 
 
     public static function total()
@@ -167,7 +180,7 @@ class ActiveRecord
         $resultado = self::$db->query($query);
         $total = $resultado->fetch_array();
 
-        return array_shift($total);
+        return $total;
 
     }
 

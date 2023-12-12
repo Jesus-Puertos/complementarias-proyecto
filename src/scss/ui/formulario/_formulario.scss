@@ -65,6 +65,15 @@
             border-bottom-left-radius: 0;
         }
     }
+
+    &__radio{
+        display: flex;
+        gap: 1.5rem;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    
     &__texto{
         margin: 3rem;
     }

@@ -1,16 +1,18 @@
 <?php
 
 
-
 require_once __DIR__ . '/../includes/app.php';
 
 
+use Controllers\APIComplementarias;
+use Controllers\APIInstructores;
 use MVC\Router;
 use Controllers\AuthController;
 use Controllers\DashboardController;
 use Controllers\ComplementariasController;
 use Controllers\InstructoresController;
 use Controllers\RegistradosController;
+
 
 $router = new Router();
 
@@ -49,8 +51,16 @@ $router->post('/admin/instructores/eliminar', [InstructoresController::class, 'e
 
 $router->get('/admin/complementarias', [ComplementariasController::class, 'index']);
 $router->get('/admin/complementarias/crear', [ComplementariasController::class, 'crear']);
+$router->post('/admin/complementarias/crear', [ComplementariasController::class, 'crear']);
+$router->get('/admin/complementarias/editar', [ComplementariasController::class, 'editar']);
+$router->post('/admin/complementarias/editar', [ComplementariasController::class, 'editar']);
+$router->post('/admin/complementarias/eliminar', [ComplementariasController::class, 'eliminar']);
 
 
+
+$router->get('/api/complementarias-horario', [APIComplementarias::class, 'index']);
+$router->get('/api/instructores', [APIInstructores::class, 'index']);
+$router->get('/api/instructor', [APIInstructores::class, 'instructor']);
 
 
 $router->get('/admin/registrados', [RegistradosController::class, 'index']);

@@ -37,7 +37,7 @@
 
       <div class="formulario__campo">
          <label for="carrera" class="formulario__label">Carrera</label>
-         <select class="formulario__input" id="carrera" name="carrera" value="<?php echo $usuario->carrera; ?>">
+         <select class="formulario__select" id="carrera" name="carrera" value="<?php echo $usuario->carrera; ?>">
             <option>Seleccionar carrera</option>
             <option>Ingeniería en Sistemas Computacionales</option>
             <option>Ingeniería en Gestion Empresarial</option>
@@ -50,7 +50,7 @@
 
       <div class="formulario__campo">
          <label for="semestre" class="formulario__label">Semestre</label>
-         <select class="formulario__input" id="semestre" name="semestre" value="<?php echo $usuario->semestre; ?>">
+         <select class="formulario__select" id="semestre" name="semestre" value="<?php echo $usuario->semestre; ?>">
             <option>Seleccionar Semestre</option>
             <option>1</option>
             <option>2</option>

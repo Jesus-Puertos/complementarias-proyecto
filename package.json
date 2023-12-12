@@ -1,7 +1,7 @@
 {
-  "name": "devwebcamp-php-mvc-mysql",
+  "name": "complementarias-web",
   "version": "1.0.0",
-  "description": "Proyecto Final Desarrollo Web Completo con @codigoconjuan",
+  "description": "Proyecto de complementarias para el ITSZ elaborado por @jesus-puertos",
   "main": "index.js",
   "scripts": {
     "dev": "gulp dev"

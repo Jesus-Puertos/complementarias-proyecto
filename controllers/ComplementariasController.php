@@ -3,6 +3,13 @@
 namespace Controllers;
 
 
+use Classes\Paginacion;
+use Model\Categoria;
+use Model\Dia;
+use Model\Evento;
+use Model\Hora;
+use Model\Instructor;
+use Model\Unidad;
 use MVC\Router;
 
 class ComplementariasController
@@ -10,10 +17,186 @@ class ComplementariasController
 
     public static function index(Router $router)
     {
+        if (!is_admin()) {
+            header('Location: /login');
+        }
+
+
+        $pagina_actual = $_GET['page'];
+        $pagina_actual = filter_var($pagina_actual, FILTER_VALIDATE_INT);
+
+        if (!$pagina_actual) {
+            header('Location: /admin/complementarias?page=1');
+        }
+
+        $por_pagina = 10;
+
+        $total = Evento::total();
+
+        $paginacion = new Paginacion($total, $pagina_actual, $por_pagina);
+
+
+        $complementarias = Evento::paginar($por_pagina, $paginacion->offset());
+
+        foreach ($complementarias as $complementaria) {
+            $complementaria->categoria = Categoria::find($complementaria->categoria_id);
+            $complementaria->dia = Dia::find($complementaria->dia_id);
+            $complementaria->hora = Hora::find($complementaria->hora_id);
+            $complementaria->instructor = Instructor::find($complementaria->instructor_id);
+
+        }
+
+
+        // debuguear($complementarias);
+
         $router->render('admin/complementarias/index', [
-            'titulo' => 'Complementarias de la plataforma'
+            'titulo' => 'Complementarias de la plataforma',
+            'complementarias' => $complementarias,
+            'paginacion' => $paginacion->paginacion()
+        ]);
+    }
+
+    public static function crear(Router $router)
+    {
+        if (!is_admin()) {
+            header('Location: /login');
+        }
+
+
+        $alertas = [];
+
+        //'ASC' Para que se ordene de forma ascendente
+        $categorias = Categoria::all('ASC');
+        $unidades = Unidad::all('ASC');
+        $dias = Dia::all('ASC');
+        $horas = Hora::all('ASC');
+
+        $evento = new Evento;
+
+
+
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if (!is_admin()) {
+                header('Location: /login');
+            }
+
+
+            $evento->sincronizar($_POST);
+
+            $alertas = $evento->validar();
+
+            if (empty($alertas)) {
+                $resultado = $evento->guardar();
+
+                if ($resultado) {
+                    header('Location: /admin/complementarias');
+                    return;
+                }
+            }
+        }
+
+        $router->render('admin/complementarias/crear', [
+            'titulo' => 'Registrar Complementaria',
+            'alertas' => $alertas,
+            'categorias' => $categorias,
+            'unidades' => $unidades,
+            'dias' => $dias,
+            'horas' => $horas,
+            'evento' => $evento,
         ]);
     }
 
 
+
+    public static function editar(Router $router)
+    {
+        if (!is_admin()) {
+            header('Location: /login');
+        }
+
+
+        $alertas = [];
+
+        $id = $_GET['id'];
+        $id = filter_var($id, FILTER_VALIDATE_INT);
+
+        if (!$id) {
+            header('Location: /admin/complementarias');
+        }
+
+
+        //'ASC' Para que se ordene de forma ascendente
+        $categorias = Categoria::all('ASC');
+        $unidades = Unidad::all('ASC');
+        $dias = Dia::all('ASC');
+        $horas = Hora::all('ASC');
+
+        $evento = Evento::find($id);
+
+        if (!$evento) {
+            header('Location: /admin/complementarias');
+        }
+
+
+
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if (!is_admin()) {
+                header('Location: /login');
+            }
+
+
+            $evento->sincronizar($_POST);
+
+            $alertas = $evento->validar();
+
+            if (empty($alertas)) {
+                $resultado = $evento->guardar();
+
+                if ($resultado) {
+                    header('Location: /admin/complementarias');
+                    return;
+                }
+            }
+        }
+
+        $router->render('admin/complementarias/editar', [
+            'titulo' => 'Editar Complementaria',
+            'alertas' => $alertas,
+            'categorias' => $categorias,
+            'unidades' => $unidades,
+            'dias' => $dias,
+            'horas' => $horas,
+            'evento' => $evento,
+        ]);
+    }
+
+
+    public static function eliminar()
+    {
+
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+            if (!is_admin()) {
+                header('Location: /login');
+            }
+
+
+            $id = $_POST['id'];
+            $complementaria = Evento::find($id);
+
+            if (isset($complementaria)) {
+                header('Location: /admin/complementarias?mensaje=3');
+            }
+
+            $resultado = $complementaria->eliminar();
+
+            if ($resultado) {
+                header('Location: /admin/complementarias?mensaje=4');
+            }
+
+        }
+    }
 }
