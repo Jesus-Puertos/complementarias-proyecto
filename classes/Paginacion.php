@@ -13,7 +13,6 @@ class Paginacion
         $this->pagina_actual = (int) $pagina_actual;
         $this->registros_por_pagina = (int) $registros_por_pagina;
         $this->total_registros = (int) $total_registros;
-
     }
 
     public function offset()
@@ -23,7 +22,9 @@ class Paginacion
 
     public function total_paginas()
     {
-        return ceil($this->total_registros / $this->registros_por_pagina);
+        $total = ceil($this->total_registros / $this->registros_por_pagina);
+        $total == 0 ? $total = 1 : $total = $total;
+        return $total;
     }
 
     public function pagina_anterior()
@@ -42,7 +43,7 @@ class Paginacion
     {
         $html = '';
         if ($this->pagina_anterior()) {
-            $html .= "<a class=\"paginacion__enlace paginacion__enlace--texto\" href=\"?page={$this->pagina_anterior()}\">&laquo; Anterior</a>";
+            $html .= "<a class=\"paginacion__enlace paginacion__enlace--texto\" href=\"?page={$this->pagina_anterior()}\">&laquo; Anterior </a>";
         }
         return $html;
     }
@@ -61,10 +62,9 @@ class Paginacion
         $html = '';
         for ($i = 1; $i <= $this->total_paginas(); $i++) {
             if ($i === $this->pagina_actual) {
-                $html .= "<span class=\"paginacion__enlace paginacion__enlace--actual\">{$i}</span>";
+                $html .= "<span class=\"paginacion__enlace paginacion__enlace--actual \">{$i}</span>";
             } else {
-                $html .= "<a href=\"?page={$i}\" class=\"paginacion__enlace paginacion__enlace--numero\">{$i}</a>";
-
+                $html .= "<a class=\"paginacion__enlace paginacion__enlace--numero \" href=\"?page={$i}\">{$i}</a>";
             }
         }
 
@@ -81,9 +81,8 @@ class Paginacion
             $html .= $this->enlace_siguiente();
             $html .= '</div>';
         }
+
         return $html;
     }
-
-
 
 }

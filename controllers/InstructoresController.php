@@ -12,45 +12,37 @@ class InstructoresController
 
     public static function index(Router $router)
     {
+        if (!is_admin()) {
+            header('Location: /login');
+        }
+
+
         $pagina_actual = $_GET['page'];
         $pagina_actual = filter_var($pagina_actual, FILTER_VALIDATE_INT);
 
         if (!$pagina_actual || $pagina_actual < 1) {
             header('Location: /admin/instructores?page=1');
-            exit;
         }
+
         $registros_por_pagina = 5;
         $total = Instructor::total();
+
         $paginacion = new Paginacion($pagina_actual, $registros_por_pagina, $total);
+
+
 
         if ($paginacion->total_paginas() < $pagina_actual) {
             header('Location: /admin/instructores?page=1');
-            exit;
         }
 
         $instructores = Instructor::paginar($registros_por_pagina, $paginacion->offset());
-
-
-        if (!is_admin()) {
-            header('Location: /login');
-        }
-
-        $alertas = [];
-
-        $mensaje = $_GET['mensaje'];
-        if ($mensaje) {
-            Instructor::setAlerta('exito', \mensajeAlerta($mensaje));
-        }
-
-        $alertas = Instructor::getAlertas();
-
 
         // debuguear($instructores);
 
         $router->render('admin/instructores/index', [
             'titulo' => 'Instuctores de la plataforma',
             'instructores' => $instructores,
-            'paginacion' => $paginacion->paginacion(),
+            'paginacion' => $paginacion->paginacion()
 
         ]);
     }
@@ -101,7 +93,7 @@ class InstructoresController
                 //Guardar en la base de datos
                 $resultado = $instructor->guardar();
                 if ($resultado) {
-                    header('Location: /admin/instructores?mensaje=2');
+                    header('Location: /admin/instructores');
                     exit;
                 }
             }
@@ -112,7 +104,6 @@ class InstructoresController
             'alertas' => $alertas,
             'instructor' => $instructor,
             'redes' => json_decode($instructor->redes)
-
         ]);
     }
 
@@ -129,14 +120,14 @@ class InstructoresController
         $id = filter_var($id, FILTER_VALIDATE_INT);
 
         if (!$id) {
-            header('Location: /admin/instructores?mensaje=3');
+            header('Location: /admin/instructores');
         }
 
         //Obtener el instructor a editar
 
         $instructor = Instructor::find($id);
         if (!$instructor) {
-            header('Location: /admin/instructores?mensaje=3');
+            header('Location: /admin/instructores');
         }
 
         $instructor->imagen_actual = $instructor->imagen;
@@ -184,7 +175,7 @@ class InstructoresController
                 $resultado = $instructor->guardar();
 
                 if ($resultado) {
-                    header('Location: /admin/instructores?mensaje=1');
+                    header('Location: /admin/instructores');
                 }
             }
 
@@ -212,7 +203,7 @@ class InstructoresController
             $instructor = Instructor::find($id);
 
             if (isset($instructor)) {
-                header('Location: /admin/instructores?mensaje=3');
+                header('Location: /admin/instructores');
             }
 
 
@@ -228,10 +219,9 @@ class InstructoresController
             $resultado = $instructor->eliminar();
 
             if ($resultado) {
-                header('Location: /admin/instructores?mensaje=4');
+                header('Location: /admin/instructores');
             }
 
         }
     }
 }
-

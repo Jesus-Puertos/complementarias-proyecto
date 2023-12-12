@@ -25,15 +25,13 @@ class ComplementariasController
         $pagina_actual = $_GET['page'];
         $pagina_actual = filter_var($pagina_actual, FILTER_VALIDATE_INT);
 
-        if (!$pagina_actual) {
+        if (!$pagina_actual || $pagina_actual < 1) {
             header('Location: /admin/complementarias?page=1');
         }
 
-        $por_pagina = 10;
-
+        $por_pagina = 5;
         $total = Evento::total();
-
-        $paginacion = new Paginacion($total, $pagina_actual, $por_pagina);
+        $paginacion = new Paginacion($pagina_actual, $por_pagina, $total);
 
 
         $complementarias = Evento::paginar($por_pagina, $paginacion->offset());
@@ -46,8 +44,6 @@ class ComplementariasController
 
         }
 
-
-        // debuguear($complementarias);
 
         $router->render('admin/complementarias/index', [
             'titulo' => 'Complementarias de la plataforma',
@@ -72,9 +68,6 @@ class ComplementariasController
         $horas = Hora::all('ASC');
 
         $evento = new Evento;
-
-
-
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (!is_admin()) {
@@ -123,6 +116,7 @@ class ComplementariasController
 
         if (!$id) {
             header('Location: /admin/complementarias');
+            return;
         }
 
 
@@ -133,13 +127,10 @@ class ComplementariasController
         $horas = Hora::all('ASC');
 
         $evento = Evento::find($id);
-
         if (!$evento) {
             header('Location: /admin/complementarias');
+            return;
         }
-
-
-
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (!is_admin()) {
@@ -187,14 +178,16 @@ class ComplementariasController
             $id = $_POST['id'];
             $complementaria = Evento::find($id);
 
-            if (isset($complementaria)) {
-                header('Location: /admin/complementarias?mensaje=3');
+            if (!isset($complementaria)) {
+                header('Location: /admin/complementarias');
+                return;
             }
 
             $resultado = $complementaria->eliminar();
 
             if ($resultado) {
-                header('Location: /admin/complementarias?mensaje=4');
+                header('Location: /admin/complementarias');
+                return;
             }
 
         }

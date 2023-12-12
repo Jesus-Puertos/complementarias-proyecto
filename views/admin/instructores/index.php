@@ -2,7 +2,7 @@
     <?php echo $titulo; ?>
 </h2>
 
-<?php include_once __DIR__ . './../../includes/templates/alertas.php'; ?>
+<?php include_once __DIR__ . '/../../templates/alertas.php'; ?>
 
 <div class="dashboard__contenedor-boton">
     <a href="/admin/instructores/crear" class="dashboard__boton">
