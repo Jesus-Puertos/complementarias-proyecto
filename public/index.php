@@ -6,6 +6,7 @@ require_once __DIR__ . '/../includes/app.php';
 
 use Controllers\APIComplementarias;
 use Controllers\APIInstructores;
+use Controllers\PaginasController;
 use MVC\Router;
 use Controllers\AuthController;
 use Controllers\DashboardController;
@@ -64,6 +65,17 @@ $router->get('/api/instructor', [APIInstructores::class, 'instructor']);
 
 
 $router->get('/admin/registrados', [RegistradosController::class, 'index']);
+
+
+//Area Publica
+
+$router->get('/', [PaginasController::class, 'index']);
+$router->get('/complementarias', [PaginasController::class, 'complementarias']);
+$router->get('/modalidades', [PaginasController::class, 'modos']);
+$router->get('/complementarias-lista', [PaginasController::class, 'listaDeComplementarias']);
+
+
+
 
 
 $router->comprobarRutas();

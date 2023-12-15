@@ -2,6 +2,9 @@
 @use 'base/mixins' as m;
 
 .barra{
+    position: sticky; // o puedes usar 'fixed'
+    top: 0;
+    z-index: 1000;
     background-color: v.$azul;
     &__contenido{
         @include m.contenedor;

@@ -40,6 +40,7 @@ class ComplementariasController
             $complementaria->categoria = Categoria::find($complementaria->categoria_id);
             $complementaria->dia = Dia::find($complementaria->dia_id);
             $complementaria->hora = Hora::find($complementaria->hora_id);
+            $complementaria->unidad = Unidad::find($complementaria->unidad_id);
             $complementaria->instructor = Instructor::find($complementaria->instructor_id);
 
         }

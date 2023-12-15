@@ -1,16 +1,17 @@
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
 
-.navegacion{
+.navegacion {
     display: flex;
     flex-direction: column;
-    @include m.desktop{
+
+    @include m.desktop {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
     }
 
-    &__enlace{
+    &__enlace {
         color: v.$blanco;
         font-size: 2rem;
         padding: 2rem;
@@ -18,10 +19,11 @@
         text-transform: uppercase;
         text-align: center;
 
-        &:hover{
+        &--actual,
+        &:hover {
             background-color: v.$blanco;
             color: v.$azul;
-            border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
     }
 }

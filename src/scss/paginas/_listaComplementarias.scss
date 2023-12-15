@@ -1,0 +1,154 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.agenda{
+    padding: 5rem 0;
+    @include m.contenedor;
+}
+
+.categorias{
+
+$modificador: &;
+
+
+    &__heading{
+        color: v.$azul;
+        margin: 5rem 0;
+        text-align: left;
+        font-size: clamp(2rem, -0.8rem + 8vw, 6rem);
+
+    }
+
+    &__fecha{
+        color: v.$gris;
+        margin: 3rem 0 1rem 0;
+
+    }
+
+    &--compromiso{
+        #{$modificador}__heading{
+            color: v.$secundario;
+            margin: 5rem 0;
+            text-align: left;
+            font-size: clamp(2rem, -0.8rem + 8vw, 6rem);
+        }
+
+        .evento__informacion{
+            background-color: v.$secundario;
+           
+            &:hover{
+                background-color: darken(v.$secundario, 10%);
+            }
+    
+        }
+    }
+
+    &--cursos{
+        #{$modificador}__heading{
+            color: v.$azul;
+            margin: 5rem 0;
+            text-align: left;
+            font-size: clamp(2rem, -0.8rem + 8vw, 6rem);
+        }
+
+        .evento__informacion{
+           
+            background-color: v.$azul;
+           
+            &:hover{
+                background-color: darken(v.$azul, 10%);
+            }
+    
+        }
+
+
+    }
+
+    .swiper-button-next, .swiper-button-prev{
+        color: rgba(v.$blanco, .8);
+    }
+    .swiper-pagination{
+        position: relative;
+        margin-top: 5rem;
+        color: v.$azul;
+    }
+ 
+}
+
+.evento{
+
+
+    &__hora{
+        font-weight: v.$bold;
+    }
+
+    
+    &__unidad{
+        width: 18rem;
+        height: 3rem;      
+        background-color: #eeeeee;
+        display: flex;
+        align-items: center;
+        padding-inline: 1rem;   
+        font-size: 1.6rem;
+        font-weight: v.$bold;
+        color: v.$negro;
+        border-radius: 10rem;
+        margin: 1rem 0;
+    }
+
+    &__informacion{
+        padding: 2rem;
+        border-radius: 1rem;
+        background-color: v.$azul;
+        color: v.$blanco;
+        transition: 300ms background-color ease-in-out;
+        &:hover{
+            background-color: darken(v.$azul, 10);
+        }
+
+    }
+
+    &__nombre{
+        font-size: 2rem;
+        margin: 0;
+        font-weight: v.$bold;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    &__introduccion{
+        //para cortar la descripcion/
+        font-size: 1.6rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+
+        @include m.tablet{
+            -webkit-line-clamp: 2;
+        }
+    }
+
+
+ &__autor-info{
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        justify-content: space-between;
+ } 
+
+ &__imagen-autor{
+    width: 5rem;
+    background-color: v.$blanco;
+    border-radius: 50%;
+ }  
+
+ &__autor-nombre{
+    font-weight: v.$bold;
+    font-size: 1.5rem;
+ }
+}

@@ -3,9 +3,9 @@
 
 .header {
     min-height: 60rem;
-    background-image: url(../img/grafico.svg),url(../img/grafico.svg)
-    , linear-gradient(to right, rgba(v.$negro, 1), rgba(v.$negro, .5)), 
-    image-set(url(../img/about-hero.avif) 1x, url(../img/about-hero.webp) 1x,url(../img/about-hero.jpg)1x);
+    background-image: url(../img/grafico.svg), url(../img/grafico.svg), linear-gradient(to right, rgba(v.$negro, 1), rgba(v.$negro, .5)  ), image-set( url(../img/about-hero.avif) 1x, url(../img/about-hero.webp) 1x, url(../img/about-hero.jpg) 1x );
+
+
     background-repeat: no-repeat;
     background-size: 400px,400px, cover, cover;
     background-position: top left, bottom right, center center, center center;
@@ -31,6 +31,15 @@
     &:hover{
         color: v.$azul;
     }
+}
+
+&__form{
+    display: flex
+}
+
+&__submit{
+   @include m.enlace;
+
 }
 
 &__contenido{

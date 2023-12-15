@@ -1,0 +1,35 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.modalidades{
+
+
+    &__grid{
+
+    @include m.contenedor;
+    @include m.grid(1,3rem);
+    @include m.tablet{
+        @include m.grid(2,2rem);
+        align-items: flex-start;
+
+    }
+}
+
+}
+
+.modalidad{
+    @include m.card;
+
+    &__lista{
+        @include m.reset-lista;
+        line-height: 2;
+    }
+
+    &__logo{
+        font-size: 4rem;
+        color: v.$azul;
+        margin: 3rem 0 0 0;
+        font-weight: v.$black;
+        text-align: center;
+    }
+}

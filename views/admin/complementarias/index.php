@@ -19,6 +19,7 @@
                         <th scope="col" class="table__th">Complementaria</th>
                         <th scope="col" class="table__th">Categoria</th>
                         <th scope="col" class="table__th">Dia y hora</th>
+                        <th scope="col" class="table__th">Unidad</th>
                         <th scope="col" class="table__th">Instructor</th>
 
                         <th scope="col" class="table__th"></th>
@@ -38,6 +39,10 @@
 
                             <td class="table__td">
                                 <?php echo $complementaria->dia->nombre . ', ' . $complementaria->hora->hora; ?>
+                            </td>
+
+                            <td class="table__td">
+                                <?php echo $complementaria->unidad->nombre; ?>
                             </td>
 
                             <td class="table__td">

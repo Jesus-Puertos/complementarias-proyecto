@@ -1,8 +1,18 @@
 <header class="header">
     <div class="header__contenedor">
         <nav class="header__navegacion">
-            <a href="/registro" class="header__enlace">Registro</a>
-            <a href="/login" class="header__enlace">Iniciar Sesión</a>
+
+            <?php if (is_auth()) { ?>
+                <a href="<?php echo is_admin() ? '/admin/dashboard' : '/finalizar-registro'; ?>"
+                    class="header__enlace">Administrar</a>
+
+                <form method="POST" action="/logout" class="header__form">
+                    <input type="submit" value="Cerrar Sesión" class="header__submit">
+                </form>
+            <?php } else { ?>
+                <a href="/registro" class="header__enlace">Registro</a>
+                <a href="/login" class="header__enlace">Iniciar Sesión</a>
+            <?php } ?>
         </nav>
 
         <div class="header__contenido">
@@ -31,10 +41,16 @@
             <h2 class="barra__logo">TECNM</h2>
         </a>
         <nav class="navegacion">
-            <a href="/complementarias" class="navegacion__enlace">Sobre las complementarias</a>
-            <a href="/modalidades" class="navegacion__enlace">Modalidades</a>
-            <a href="/complementarias-lista" class="navegacion__enlace">Lista de complementarias</a>
-            <a href="/registro" class="navegacion__enlace">Registro</a>
+            <a href="/complementarias"
+                class="navegacion__enlace <?php echo pagina_actual('/complementarias') ? 'navegacion__enlace--actual' : ''; ?>">Sobre
+                las complementarias</a>
+            <a href="/modalidades"
+                class="navegacion__enlace <?php echo pagina_actual('/modalidades') ? 'navegacion__enlace--actual' : ''; ?>">Modalidades</a>
+            <a href="/complementarias-lista"
+                class="navegacion__enlace <?php echo pagina_actual('/complementarias-lista') ? 'navegacion__enlace--actual' : ''; ?>">Lista
+                de complementarias</a>
+            <a href="/registro"
+                class="navegacion__enlace <?php echo pagina_actual('/registro') ? 'navegacion__enlace--actual' : ''; ?>">Registro</a>
         </nav>
     </div>
 </div>
