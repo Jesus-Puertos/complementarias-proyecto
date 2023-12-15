@@ -45,6 +45,19 @@ class PaginasController
     public static function listaDeComplementarias(Router $router)
     {
 
+
+
+
+        $router->render('paginas/complementarias-lista', [
+            'titulo' => 'Lista de las complementarias',
+
+        ]);
+    }
+
+    public static function proyectoIntegrador(Router $router)
+    {
+
+
         $eventos = Evento::ordenar('hora_id', 'ASC');
 
         $eventos_formateados = [];
@@ -86,7 +99,34 @@ class PaginasController
                 $eventos_formateados['proyecto_d'][] = $evento;
             }
 
-            //       COMPROMISO SOCIAL 
+        }
+
+
+
+
+        $router->render('paginas/proyecto-integrador', [
+            'titulo' => 'Proyecto Integrador',
+            'eventos' => $eventos_formateados,
+        ]);
+
+    }
+
+    public static function compromiso(Router $router)
+    {
+
+
+        $eventos = Evento::ordenar('hora_id', 'ASC');
+
+        $eventos_formateados = [];
+        foreach ($eventos as $evento) {
+            $evento->categoria = Categoria::find($evento->categoria_id);
+            $evento->dia = Dia::find($evento->dia_id);
+            $evento->hora = Hora::find($evento->hora_id);
+            $evento->unidad = Unidad::find($evento->unidad_id);
+            $evento->instructor = Instructor::find($evento->instructor_id);
+
+
+
 
             if ($evento->dia_id === "1" && $evento->categoria_id === "2") {
                 $eventos_formateados['compromiso_l'][] = $evento;
@@ -104,7 +144,7 @@ class PaginasController
                 $eventos_formateados['compromiso_j'][] = $evento;
             }
 
-            if ($evento->dia_id === "5" && $evento->categoria_id === "2") {
+            if ($evento->dia_id === "5" && $evento->categoria_id === "1") {
                 $eventos_formateados['compromiso_v'][] = $evento;
             }
 
@@ -116,8 +156,29 @@ class PaginasController
                 $eventos_formateados['compromiso_d'][] = $evento;
             }
 
-            //  CURSOS
+        }
 
+
+
+
+        $router->render('paginas/compromiso', [
+            'titulo' => 'Compromiso Social',
+            'eventos' => $eventos_formateados,
+        ]);
+
+    }
+
+    public static function curso(Router $router)
+    {
+        $eventos = Evento::ordenar('hora_id', 'ASC');
+
+        $eventos_formateados = [];
+        foreach ($eventos as $evento) {
+            $evento->categoria = Categoria::find($evento->categoria_id);
+            $evento->dia = Dia::find($evento->dia_id);
+            $evento->hora = Hora::find($evento->hora_id);
+            $evento->unidad = Unidad::find($evento->unidad_id);
+            $evento->instructor = Instructor::find($evento->instructor_id);
 
             if ($evento->dia_id === "1" && $evento->categoria_id === "3") {
                 $eventos_formateados['curso_l'][] = $evento;
@@ -150,15 +211,10 @@ class PaginasController
 
         }
 
-
-
-
-        $router->render('paginas/complementarias-lista', [
-            'titulo' => 'Lista de las complementarias',
+        $router->render('paginas/curso', [
+            'titulo' => 'Cursos',
             'eventos' => $eventos_formateados,
         ]);
+
     }
-
-
-
 }

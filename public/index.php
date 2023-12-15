@@ -73,6 +73,11 @@ $router->get('/', [PaginasController::class, 'index']);
 $router->get('/complementarias', [PaginasController::class, 'complementarias']);
 $router->get('/modalidades', [PaginasController::class, 'modos']);
 $router->get('/complementarias-lista', [PaginasController::class, 'listaDeComplementarias']);
+$router->get('/proyecto-integrador', [PaginasController::class, 'proyectoIntegrador']);
+$router->get('/compromiso', [PaginasController::class, 'compromiso']);
+$router->get('/curso', [PaginasController::class, 'curso']);
+
+
 
 
 

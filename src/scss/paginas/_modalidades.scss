@@ -13,6 +13,21 @@
         align-items: flex-start;
 
     }
+
+    
+}
+
+&__grid-lista{
+
+    @include m.contenedor;
+    @include m.grid(1,3rem);
+    @include m.tablet{
+        @include m.grid(3,2rem);
+        align-items: flex-start;
+
+    }
+
+    
 }
 
 }

@@ -1,406 +1,45 @@
-<main class="agenda">
-    <h2 class="agenda__heading">
+<main class="modalidades">
+    <h2 class="modalidades__heading">
         <?php echo $titulo; ?>
     </h2>
-    <p class="agenda__descripcion">Checa todas las complementarias que tenemos para ti, estan dictadas por expertos y
-        profesionales de su área.</p>
-    <!-- PROYECTO Integrador -->
-    <div class="categorias">
-        <h3 class="categorias__heading">Proyecto Integrador</h3>
-        <p class="categorias__fecha">Lunes</p>
 
-        <div class="categorias__listado slider swiper">
+    <p class="modalidades__descripcion">
+        Mira las modalidades que el TECNM Campus Zongolica tiene para ti:
+    </p>
 
-            <div class="swiper-wrapper">
-                <?php foreach ($eventos['proyecto_l'] as $evento) { ?>
-                    <?php include __DIR__ . '/../templates/complementaria.php'; ?>
-                <?php } ?>
-            </div>
-            <div class="swiper-pagination"></div>
-
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-
-
+    <div class="modalidades__grid-lista">
+        <div class="modalidad">
+            <h3 class="modalidad__nombre">Proyecto integrador</h3>
+            <ul class="modalidad__lista">
+                <li class="modalidad__elemento">Lorem ipsum dolor sit amet.</li>
+                <li class="modalidad__elemento">Lorem ipsum dolor sit amet.</li>
+                <li class="modalidad__elemento">Lorem ipsum dolor sit amet.</li>
+                <li class="modalidad__elemento">Lorem ipsum dolor sit amet.</li>
+            </ul>
+            <a href="/proyecto-integrador" class="header__boton">Ver Proyecto Integrador</a>
         </div>
 
-        <p class="categorias__fecha">Martes</p>
-
-
-        <div class="categorias__listado slider swiper">
-
-            <div class="swiper-wrapper">
-                <?php foreach ($eventos['proyecto_m'] as $evento) { ?>
-                    <?php include __DIR__ . '/../templates/complementaria.php'; ?>
-                <?php } ?>
-            </div>
-            <div class="swiper-pagination"></div>
-
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-
-
+        <div class="modalidad">
+            <h3 class="modalidad__nombre">Compromiso Social</h3>
+            <ul class="modalidad__lista">
+                <li class="modalidad__elemento">Lorem ipsum dolor sit amet.</li>
+                <li class="modalidad__elemento">Lorem ipsum dolor sit amet.</li>
+                <li class="modalidad__elemento">Lorem ipsum dolor sit amet.</li>
+                <li class="modalidad__elemento">Lorem ipsum dolor sit amet.</li>
+            </ul>
+            <a href="/compromiso" class="header__boton">Ver Comprmiso Social</a>
         </div>
 
-
-        <p class="categorias__fecha">Miercoles</p>
-
-
-        <div class="categorias__listado slider swiper">
-
-            <div class="swiper-wrapper">
-                <?php foreach ($eventos['proyecto_mier'] as $evento) { ?>
-                    <?php include __DIR__ . '/../templates/complementaria.php'; ?>
-                <?php } ?>
-            </div>
-            <div class="swiper-pagination"></div>
-
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-
-
+        <div class="modalidad">
+            <h3 class="modalidad__nombre">Cursos</h3>
+            <ul class="modalidad__lista">
+                <li class="modalidad__elemento">Lorem ipsum dolor sit amet.</li>
+                <li class="modalidad__elemento">Lorem ipsum dolor sit amet.</li>
+                <li class="modalidad__elemento">Lorem ipsum dolor sit amet.</li>
+                <li class="modalidad__elemento">Lorem ipsum dolor sit amet.</li>
+            </ul>
+            <a href="/curso" class="header__boton">Ver Cursos</a>
         </div>
+    </div>
 
-        <p class="categorias__fecha">Jueves</p>
-
-
-        <div class="categorias__listado slider swiper">
-
-            <div class="swiper-wrapper">
-                <?php foreach ($eventos['proyecto_j'] as $evento) { ?>
-                    <?php include __DIR__ . '/../templates/complementaria.php'; ?>
-                <?php } ?>
-            </div>
-            <div class="swiper-pagination"></div>
-
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-
-
-        </div>
-
-        <p class="categorias__fecha">Viernes</p>
-
-
-        <div class="categorias__listado slider swiper">
-
-            <div class="swiper-wrapper">
-                <?php foreach ($eventos['proyecto_v'] as $evento) { ?>
-                    <?php include __DIR__ . '/../templates/complementaria.php'; ?>
-                <?php } ?>
-            </div>
-            <div class="swiper-pagination"></div>
-
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-
-
-        </div>
-
-
-        <p class="categorias__fecha">Sabado</p>
-
-
-        <div class="categorias__listado slider swiper">
-
-            <div class="swiper-wrapper">
-                <?php foreach ($eventos['proyecto_s'] as $evento) { ?>
-                    <?php include __DIR__ . '/../templates/complementaria.php'; ?>
-                <?php } ?>
-            </div>
-            <div class="swiper-pagination"></div>
-
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-
-
-        </div>
-
-
-        <p class="categorias__fecha">Domingo</p>
-
-
-        <div class="categorias__listado slider swiper">
-
-            <div class="swiper-wrapper">
-                <?php foreach ($eventos['proyecto_d'] as $evento) { ?>
-                    <?php include __DIR__ . '/../templates/complementaria.php'; ?>
-                <?php } ?>
-            </div>
-            <div class="swiper-pagination"></div>
-
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-
-
-        </div>
-
-
-
-
-        <!-- COMPRMISO SOCIAL -->
-        <div class="categorias categorias--compromiso">
-            <h3 class="categorias__heading">Compromiso Social</h3>
-            <p class="categorias__fecha">Lunes</p>
-
-            <div class="categorias__listado slider swiper">
-
-                <div class="swiper-wrapper">
-                    <?php foreach ($eventos['compromiso_l'] as $evento) { ?>
-                        <?php include __DIR__ . '/../templates/complementaria.php'; ?>
-                    <?php } ?>
-                </div>
-                <div class="swiper-pagination"></div>
-
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-
-
-            </div>
-
-            <p class="categorias__fecha">Martes</p>
-
-
-            <div class="categorias__listado slider swiper">
-
-                <div class="swiper-wrapper">
-                    <?php foreach ($eventos['compromiso_m'] as $evento) { ?>
-                        <?php include __DIR__ . '/../templates/complementaria.php'; ?>
-                    <?php } ?>
-                </div>
-                <div class="swiper-pagination"></div>
-
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-
-
-            </div>
-
-
-            <p class="categorias__fecha">Miercoles</p>
-
-
-            <div class="categorias__listado slider swiper">
-
-                <div class="swiper-wrapper">
-                    <?php foreach ($eventos['compromiso_mier'] as $evento) { ?>
-                        <?php include __DIR__ . '/../templates/complementaria.php'; ?>
-                    <?php } ?>
-                </div>
-                <div class="swiper-pagination"></div>
-
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-
-
-            </div>
-
-            <p class="categorias__fecha">Jueves</p>
-
-
-            <div class="categorias__listado slider swiper">
-
-                <div class="swiper-wrapper">
-                    <?php foreach ($eventos['compromiso_j'] as $evento) { ?>
-                        <?php include __DIR__ . '/../templates/complementaria.php'; ?>
-                    <?php } ?>
-                </div>
-                <div class="swiper-pagination"></div>
-
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-
-
-            </div>
-
-            <p class="categorias__fecha">Viernes</p>
-
-
-            <div class="categorias__listado slider swiper">
-
-                <div class="swiper-wrapper">
-                    <?php foreach ($eventos['compromiso_v'] as $evento) { ?>
-                        <?php include __DIR__ . '/../templates/complementaria.php'; ?>
-                    <?php } ?>
-                </div>
-                <div class="swiper-pagination"></div>
-
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-
-
-            </div>
-
-
-            <p class="categorias__fecha">Sabado</p>
-
-
-            <div class="categorias__listado slider swiper">
-
-                <div class="swiper-wrapper">
-                    <?php foreach ($eventos['compromiso_s'] as $evento) { ?>
-                        <?php include __DIR__ . '/../templates/complementaria.php'; ?>
-                    <?php } ?>
-                </div>
-                <div class="swiper-pagination"></div>
-
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-
-
-            </div>
-
-
-            <p class="categorias__fecha">Domingo</p>
-
-
-            <div class="categorias__listado slider swiper">
-
-                <div class="swiper-wrapper">
-                    <?php foreach ($eventos['compromiso_d'] as $evento) { ?>
-                        <?php include __DIR__ . '/../templates/complementaria.php'; ?>
-                    <?php } ?>
-                </div>
-                <div class="swiper-pagination"></div>
-
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-
-
-            </div>
-
-
-            <!-- CURSOS  -->
-            <div class="categorias categorias--cursos">
-                <h3 class="categorias__heading">Cursos</h3>
-                <p class="categorias__fecha">Lunes</p>
-
-                <div class="categorias__listado slider swiper">
-
-                    <div class="swiper-wrapper">
-                        <?php foreach ($eventos['curso_l'] as $evento) { ?>
-                            <?php include __DIR__ . '/../templates/complementaria.php'; ?>
-                        <?php } ?>
-                    </div>
-                    <div class="swiper-pagination"></div>
-
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-
-
-                </div>
-
-                <p class="categorias__fecha">Martes</p>
-
-
-                <div class="categorias__listado slider swiper">
-
-                    <div class="swiper-wrapper">
-                        <?php foreach ($eventos['curso_m'] as $evento) { ?>
-                            <?php include __DIR__ . '/../templates/complementaria.php'; ?>
-                        <?php } ?>
-                    </div>
-                    <div class="swiper-pagination"></div>
-
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-
-
-                </div>
-
-
-                <p class="categorias__fecha">Miercoles</p>
-
-
-                <div class="categorias__listado slider swiper">
-
-                    <div class="swiper-wrapper">
-                        <?php foreach ($eventos['curso_mier'] as $evento) { ?>
-                            <?php include __DIR__ . '/../templates/complementaria.php'; ?>
-                        <?php } ?>
-                    </div>
-                    <div class="swiper-pagination"></div>
-
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-
-
-                </div>
-
-                <p class="categorias__fecha">Jueves</p>
-
-
-                <div class="categorias__listado slider swiper">
-
-                    <div class="swiper-wrapper">
-                        <?php foreach ($eventos['curso_j'] as $evento) { ?>
-                            <?php include __DIR__ . '/../templates/complementaria.php'; ?>
-                        <?php } ?>
-                    </div>
-                    <div class="swiper-pagination"></div>
-
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-
-
-                </div>
-
-                <p class="categorias__fecha">Viernes</p>
-
-
-                <div class="categorias__listado slider swiper">
-
-                    <div class="swiper-wrapper">
-                        <?php foreach ($eventos['curso_v'] as $evento) { ?>
-                            <?php include __DIR__ . '/../templates/complementaria.php'; ?>
-                        <?php } ?>
-                    </div>
-                    <div class="swiper-pagination"></div>
-
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-
-
-                </div>
-
-
-                <p class="categorias__fecha">Sabado</p>
-
-
-                <div class="categorias__listado slider swiper">
-
-                    <div class="swiper-wrapper">
-                        <?php foreach ($eventos['curso_s'] as $evento) { ?>
-                            <?php include __DIR__ . '/../templates/complementaria.php'; ?>
-                        <?php } ?>
-                    </div>
-                    <div class="swiper-pagination"></div>
-
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-
-
-                </div>
-
-
-                <p class="categorias__fecha">Domingo</p>
-
-
-                <div class="categorias__listado slider swiper">
-
-                    <div class="swiper-wrapper">
-                        <?php foreach ($eventos['curso_d'] as $evento) { ?>
-                            <?php include __DIR__ . '/../templates/complementaria.php'; ?>
-                        <?php } ?>
-                    </div>
-                    <div class="swiper-pagination"></div>
-
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-
-
-                </div>
-
-
-            </div>
 </main>
