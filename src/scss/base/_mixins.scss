@@ -103,7 +103,7 @@ font-size: clamp($min,  -0.8rem + 10vw  ,$max);
     color: v.$blanco;
     text-align: center;
     margin-bottom: 2rem;
-    white-space: nowrap;
+    white-space: wrap;
     @include desktop{
     text-align: left;
     margin: 0;    
@@ -125,19 +125,19 @@ font-size: clamp($min,  -0.8rem + 10vw  ,$max);
 
           }
           
-        &[href*="https://www.facebook.com/TecNMZongolica"]::before {
+        &[href*="facebook.com"]::before {
             content: "\f39e";
         }
-         &[href*="https://www.tiktok.com/@itszongolica"]::before {
+         &[href*="tiktok.com"]::before {
             content: "\e07b";
         }
-        &[href*="https://www.instagram.com/tecnmcampuszongolica/"]::before {
+        &[href*="instagram.com"]::before {
             content: "\f16d";
         }
-        &[href*="https://www.youtube.com/@tecnmzongolica7292"]::before {
+        &[href*="www.youtube.com"]::before {
             content: "\f167";
         }
-        &[href*="https://x.com/SomosITSZ?s=20"]::before {
+        &[href*="x.com"]::before {
             content: "\f099";
         }
        

@@ -2,8 +2,7 @@
     <h2 class="agenda__heading">
         <?php echo $titulo; ?>
     </h2>
-    <p class="agenda__descripcion">Checa todas las complementarias que tenemos para ti, estan dictadas por expertos y
-        profesionales de su área.</p>
+
     <!-- PROYECTO Integrador -->
     <div class="categorias categorias--cursos">
         <h3 class="categorias__heading">Cursos</h3>

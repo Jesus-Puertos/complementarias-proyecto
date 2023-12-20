@@ -4,9 +4,9 @@
     </h2>
 
     <p class="modalidades__descripcion">
-        Mira las modalidades que el TECNM Campus Zongolica tiene para ti:
+        Checa todas las complementarias que tenemos para ti, estan dictadas por expertos y
+        profesionales de su área.
     </p>
-
     <div class="modalidades__grid-lista">
         <div class="modalidad">
             <h3 class="modalidad__nombre">Proyecto integrador</h3>

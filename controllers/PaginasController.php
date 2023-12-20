@@ -15,10 +15,20 @@ class PaginasController
     public static function index(Router $router)
     {
 
+        //OBTENER EL TOTAL DE CADA BLOQUE
+        $instructor = Instructor::all();
+        $complementarias = Evento::total('categoria_id', 1);
+        $categorias = Categoria::all();
 
+        $instructores = Instructor::all();
 
         $router->render('paginas/index', [
-            'titulo' => 'Inicio'
+            'titulo' => 'Inicio',
+            'instructor' => $instructor,
+            'complementarias' => $complementarias,
+            'categorias' => $categorias,
+            'instructores' => $instructores,
+
         ]);
     }
 

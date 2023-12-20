@@ -19,15 +19,14 @@
         </p>
 
         <div class="evento__autor-info">
-            <picture>
-                <source srcset="<?php echo $_ENV['HOST'] . '/img/instructores/' . $evento->instructor->imagen; ?>.webp"
-                    type="image/webp">
-                <source srcset="<?php echo $_ENV['HOST'] . '/img/instructores/' . $evento->instructor->imagen; ?>.png"
-                    type="image/png">
-                <img class="evento__imagen-autor" loading="lazy" width="200" height="300"
-                    src="<?php echo $_ENV['HOST'] . '/img/instructores/' . $evento->instructor->imagen; ?>.png"
-                    alt="Imagen Ponente">
 
+            <picture>
+                <source srcset="img/instructores/<?php echo $evento->instructor->imagen;
+                ; ?>.webp" type="image/webp">
+                <source srcset="img/instructores/<?php echo $evento->instructor->imagen;
+                ; ?>.png" type="image/png">
+                <img class="evento__imagen-autor" loading="lazy" width="200" height="300" src="img/instructores/<?php echo $evento->instructor->imagen;
+                ; ?>.png" alt="Imagen Ponente">
             </picture>
 
             <p class="evento__autor-nombre">

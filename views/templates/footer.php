@@ -2,7 +2,7 @@
     <div class="footer__grid">
         <div class="footer__contenido">
 
-            <h3 class="footer__logo">Instituto Tecnologico Superior de Zongolica</h3>
+            <h3 class="footer__logo">ITSZ</h3>
             <p class="footer__texto">
                 El ITSZ está comprometido con este programa de formación profesional y mediante su departamento de
                 Actividades Complementarias se ofertaran actividades Extraescolares, en las cuales se ofrecerán diversas

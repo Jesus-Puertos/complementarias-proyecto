@@ -9,13 +9,19 @@
         @include m.contenedor;
         @include m.grid(1, 3rem);
 
-        @include m.tablet{
+        @include m.desktop{
             @include m.grid(2, 5rem);
             align-items: center;
         }
 
         
+
+        
     }
+
+
+
+   
     &__texto{
         line-height: 2;
     }

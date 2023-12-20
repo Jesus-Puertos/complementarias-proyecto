@@ -1,0 +1,84 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.resumen{
+    background-image: linear-gradient(to right, rgba(v.$negro,.7), rgba(v.$negro,.9)), url(../img/bg_numeros.jpg);
+    background-image: linear-gradient(to right, rgba(v.$negro,.7), rgba(v.$negro,.9)), image-set(
+        url('../img/bg_numeros.avif') 1x,
+        url('../img/bg_numeros.webp') 1x,
+        url('../img/bg_numeros.jpg') 1x
+    );
+    
+    
+    background-size: cover;
+    background-position: 50% 35%;
+
+    margin-top: 5rem;
+    padding: 12rem 0;
+
+    &__grid{
+        @include m.contenedor;
+        @include m.grid(1,5rem);
+        @include m.tablet{
+            @include m.grid(2,5rem);
+        }
+    }
+
+    &__bloque{
+        text-align: center;
+        color: v.$blanco;
+
+     
+    }
+
+    @keyframes aparecer{
+        0%{
+            opacity: 0;
+            transform: translateY(100px);
+        }
+        100%{
+            opacity: 1;
+            transform: translateY(0);
+        }
+      }
+
+      .ocultar{
+            opacity: 0;
+      }
+
+      .animar{
+            animation: aparecer 1.3s;
+      }
+
+&__texto{
+    font-weight: v.$black;
+    line-height: 1;
+    margin:0;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    text-decoration: underline wavy hotpink;
+
+    &--numero{
+        @extend .resumen__texto;
+        text-decoration: none;
+        font-size: 8rem;
+        animation: text-pop-up-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+
+    @keyframes text-pop-up-top {
+        0% {
+          transform: translateY(0);
+          transform-origin: 50% 50%;
+          text-shadow: none;
+        }
+        100% {
+          transform: translateY(-3px);
+          transform-origin: 50% 50%;
+          text-shadow: 0 1px 0 #cccccc, 0 2px 0 #cccccc, 0 3px 0 #cccccc, 0 4px 0 #cccccc, 0 5px 0 #cccccc, 0 6px 0 #cccccc, 0 7px 0 #cccccc, 0 8px 0 #cccccc, 0 9px 0 #cccccc, 0 50px 30px rgba(0, 0, 0, 0.2);
+        }
+      }
+
+     
+}
+
+}

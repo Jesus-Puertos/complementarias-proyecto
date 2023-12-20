@@ -37,10 +37,20 @@
 
 <div class="barra">
     <div class="barra__contenido">
+        <ul>
+            <li class="barra__switch">
+                <i class="bx bxs-sun"></i>
+                <i class="bx bxs-moon"></i>
+            </li>
+        </ul>
         <a href="/">
             <h2 class="barra__logo">TECNM</h2>
         </a>
-        <nav class="navegacion">
+        <button class="barra__hamburguesa" onclick="toggleMenu()">☰</button>
+        <nav class="navegacion" id="menu">
+
+            <a href="/"
+                class="navegacion__enlace <?php echo pagina_actual('/') ? 'navegacion__enlace--actual' : ''; ?>">Inicio</a>
             <a href="/complementarias"
                 class="navegacion__enlace <?php echo pagina_actual('/complementarias') ? 'navegacion__enlace--actual' : ''; ?>">Sobre
                 las complementarias</a>
@@ -51,6 +61,7 @@
                 de complementarias</a>
             <a href="/registro"
                 class="navegacion__enlace <?php echo pagina_actual('/registro') ? 'navegacion__enlace--actual' : ''; ?>">Registro</a>
+
         </nav>
     </div>
 </div>

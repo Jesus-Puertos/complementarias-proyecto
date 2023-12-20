@@ -2,18 +2,31 @@
 @use 'base/mixins' as m;
 
 .navegacion {
-    display: flex;
+    display: none;
     flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: v.$azul;
+
+    &.show {
+        display: flex;
+    }
+
 
     @include m.desktop {
+        display: flex;
+        position: static;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: flex-end;
         align-items: center;
+        background-color: transparent;
     }
 
     &__enlace {
         color: v.$blanco;
-        font-size: 2rem;
+        font-size: 1.6rem;
         padding: 2rem;
         font-weight: v.$black;
         text-transform: uppercase;

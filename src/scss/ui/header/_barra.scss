@@ -2,23 +2,72 @@
 @use 'base/mixins' as m;
 
 .barra{
-    position: sticky; // o puedes usar 'fixed'
+    position: sticky;
     top: 0;
     z-index: 1000;
     background-color: v.$azul;
+
     &__contenido{
         @include m.contenedor;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+
+
+    @include m.desktop{
+        flex-direction: row;
+        gap: 2rem;
+
+    }
+    }
+
+    &__switch{
+        width: 3rem; /* Reduje el ancho del switch para que solo muestre un icono a la vez */
+        height: 3rem;
         display: flex;
-        flex-direction: column;
+        align-items: center;
+        justify-content: center; /* Centrar los iconos vertical y horizontalmente */
+        position: relative;
+        border-radius: 50%;
+        background-color: v.$azul;
+        & i{font-size: 2.5rem; /* Aumenta el tamaño de los iconos */
+            color: v.$amarillo;
+            display: none;}
+
+            &.active i.bxs-moon {
+                display: none; /* Oculta el sol cuando el switch está activo */
+              }
+
+              &.active i.bxs-sun {
+                display: inline; /* Muestra la luna cuando el switch está activo */
+              }
+
+              &:not(.active) i.bxs-moon {
+                display: inline; /* Muestra el sol cuando el switch no está activo */
+              }
+
+              &:not(.active) i.bxs-sun {
+                display: none; /* Oculta la luna cuando el switch no está activo */
+              }
+    }
+
+    &__hamburguesa{
+        display: block;
+        background: none;
+        border: none;
+        font-size: 2rem;
+        color: v.$blanco;
+        cursor: pointer;
+
         @include m.desktop{
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
+            display: none;
         }
     }
 
     &__logo{
-      @include m.logo;
-      @include m.texto-fluido(2rem, 3rem);  
-      }
+        @include m.logo;
+        margin-left: 5rem;
+        @include m.texto-fluido(2rem, 3rem);
+    }
 }

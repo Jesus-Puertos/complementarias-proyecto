@@ -7,12 +7,12 @@
 
     <div class="complementarias__grid">
 
-        <div class="complementaria__imagen">
+        <div class="complementarias__imagen">
             <picture>
                 <source srcset="build/img/sobre_complementarias.avif" type="image/avif">
                 <source srcset="build/img/sobre_complementarias.webp" type="image/webp">
                 <img loading="lazy" width="200" height="300" src="build/img/sobre_complementarias.jpg" type="image/jpg"
-                    alt="Imagen sobre las complementarias">
+                    alt="Imagen sobre las complementarias" style="border-radius: 2px;">
             </picture>
         </div>
 
