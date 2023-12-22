@@ -40,6 +40,13 @@
         line-height: 2;
     }
 
+    &__descripcion{
+        font-size: 1.6rem;
+        color: v.$gris;
+        margin: 2rem 0;
+        text-align: justify;
+    }
+
     &__logo{
         font-size: 4rem;
         color: v.$azul;

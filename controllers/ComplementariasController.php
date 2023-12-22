@@ -11,6 +11,7 @@ use Model\Hora;
 use Model\Instructor;
 use Model\Unidad;
 use MVC\Router;
+use Model\Modalidad;
 
 class ComplementariasController
 {
@@ -38,6 +39,7 @@ class ComplementariasController
 
         foreach ($complementarias as $complementaria) {
             $complementaria->categoria = Categoria::find($complementaria->categoria_id);
+            $complementaria->modalidad = Modalidad::find($complementaria->modalidad_id);
             $complementaria->dia = Dia::find($complementaria->dia_id);
             $complementaria->hora = Hora::find($complementaria->hora_id);
             $complementaria->unidad = Unidad::find($complementaria->unidad_id);
@@ -67,6 +69,7 @@ class ComplementariasController
         $unidades = Unidad::all('ASC');
         $dias = Dia::all('ASC');
         $horas = Hora::all('ASC');
+        $modalidades = Modalidad::all('ASC');
 
         $evento = new Evento;
 
@@ -94,6 +97,7 @@ class ComplementariasController
             'titulo' => 'Registrar Complementaria',
             'alertas' => $alertas,
             'categorias' => $categorias,
+            'modalidades' => $modalidades,
             'unidades' => $unidades,
             'dias' => $dias,
             'horas' => $horas,
@@ -124,6 +128,7 @@ class ComplementariasController
         //'ASC' Para que se ordene de forma ascendente
         $categorias = Categoria::all('ASC');
         $unidades = Unidad::all('ASC');
+        $modalidades = Modalidad::all('ASC');
         $dias = Dia::all('ASC');
         $horas = Hora::all('ASC');
 
@@ -157,6 +162,7 @@ class ComplementariasController
             'titulo' => 'Editar Complementaria',
             'alertas' => $alertas,
             'categorias' => $categorias,
+            'modalidades' => $modalidades,
             'unidades' => $unidades,
             'dias' => $dias,
             'horas' => $horas,

@@ -6,7 +6,7 @@ class Evento extends ActiveRecord
 {
 
     protected static $tabla = 'eventos';
-    protected static $columnasDB = ['id', 'nombre', 'descripcion', 'disponibles', 'categoria_id', 'unidad_id', 'dia_id', 'hora_id', 'instructor_id'];
+    protected static $columnasDB = ['id', 'nombre', 'descripcion', 'disponibles', 'categoria_id', 'unidad_id', 'dia_id', 'hora_id', 'instructor_id', 'modalidad_id'];
 
     public $id;
     public $nombre;
@@ -25,6 +25,8 @@ class Evento extends ActiveRecord
 
     public $instructor_id;
 
+    public $modalidad_id;
+
     public function __construct($args = [])
     {
         $this->id = $args['id'] ?? null;
@@ -36,6 +38,7 @@ class Evento extends ActiveRecord
         $this->dia_id = $args['dia_id'] ?? '';
         $this->hora_id = $args['hora_id'] ?? '';
         $this->instructor_id = $args['instructor_id'] ?? '';
+        $this->modalidad_id = $args['modalidad_id'] ?? '';
 
     }
 
@@ -50,6 +53,9 @@ class Evento extends ActiveRecord
         }
         if (!$this->categoria_id || !filter_var($this->categoria_id, FILTER_VALIDATE_INT)) {
             self::$alertas['error'][] = 'Elige una Categoría';
+        }
+        if (!$this->modalidad_id || !filter_var($this->modalidad_id, FILTER_VALIDATE_INT)) {
+            self::$alertas['error'][] = 'Elige una Modalidad';
         }
         if (!$this->unidad_id || !filter_var($this->unidad_id, FILTER_VALIDATE_INT)) {
             self::$alertas['error'][] = 'Elige la unidad académica';

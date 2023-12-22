@@ -28,6 +28,22 @@
         </select>
     </div>
 
+
+
+    <div class="formulario__campo">
+        <label for="modalidad" class="formulario__label">Modalidad de Complementaria</label>
+        <select class="formulario__select" id="modalidad" name="modalidad_id">
+
+            <option value="">-- Seleccionar --</option>
+            <?php foreach ($modalidades as $modalidad) { ?>
+                <option <?php echo ($evento->modalidad_id === $modalidad->id) ? 'selected' : '' ?>
+                    value="<?php echo $modalidad->id; ?>">
+                    <?php echo $modalidad->nombre; ?>
+                </option>
+            <?php } ?>
+        </select>
+    </div>
+
     <div class="formulario__campo">
         <label for="unidad" class="formulario__label">Seleccionar Unidad Académica</label>
         <select class="formulario__select" id="unidad" name="unidad_id">

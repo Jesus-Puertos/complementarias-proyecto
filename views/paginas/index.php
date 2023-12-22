@@ -176,4 +176,5 @@ include_once __DIR__ . '/complementarias-lista.php';
 
         <a href="/modalidades" class="boleto__enlace">Ver modalidades</a>
     </div>
+
 </section>

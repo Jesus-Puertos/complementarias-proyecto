@@ -8,10 +8,15 @@
     </p>
 
 
-    <div class="evento__informacion">
-        <h4 class="evento__nombre">
-            <?php echo $evento->nombre; ?>
-        </h4>
+    <div class="evento__informacion ">
+        <div class="evento__grupo">
+            <h4 class="evento__nombre">
+                <?php echo $evento->nombre; ?>
+            </h4>
+            <p class="evento__modalidad">
+                <?php echo $evento->modalidad->nombre; ?>
+            </p>
+        </div>
 
 
         <p class="evento__introduccion">
@@ -19,7 +24,6 @@
         </p>
 
         <div class="evento__autor-info">
-
             <picture>
                 <source srcset="img/instructores/<?php echo $evento->instructor->imagen;
                 ; ?>.webp" type="image/webp">
@@ -32,7 +36,12 @@
             <p class="evento__autor-nombre">
                 <?php echo $evento->instructor->nombre . ' ' . $evento->instructor->apellido ?>
             </p>
+
         </div>
+
+
+
+
     </div>
 
 </div>

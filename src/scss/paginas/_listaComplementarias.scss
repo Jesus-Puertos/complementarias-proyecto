@@ -40,6 +40,7 @@ $modificador: &;
             &:hover{
                 background-color: darken(v.$secundario, 10%);
             }
+
     
         }
     }
@@ -77,6 +78,7 @@ $modificador: &;
 }
 
 .evento{
+    position: relative;
 
 
     &__hora{
@@ -106,8 +108,16 @@ $modificador: &;
         transition: 300ms background-color ease-in-out;
         &:hover{
             background-color: darken(v.$azul, 10);
+            cursor: pointer;
         }
 
+
+    }
+
+    &__grupo{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
     &__nombre{
@@ -131,6 +141,14 @@ $modificador: &;
         @include m.tablet{
             -webkit-line-clamp: 2;
         }
+
+        &--activo{
+            font-size: 1.6rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 8;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
     }
 
 
@@ -151,4 +169,20 @@ $modificador: &;
     font-weight: v.$bold;
     font-size: 1.5rem;
  }
+
+ &__modalidad{
+    width: 8rem;
+    height: 3rem;      
+    background-color: #eafef3;
+    display: flex;
+    align-items: center; // Cambiado de center a flex-end
+    justify-content: flex-end;
+    padding-inline: 1rem;   
+    font-size: 1.6rem;
+    font-weight: v.$black;
+    color: #2ecc71;
+    border-radius: 10rem;
+    margin: 1rem 0;
+    border: 1px solid #2ecc71;
+}
 }

@@ -371,6 +371,171 @@ h3 {
   margin-bottom: 5rem;
 }
 
+body.active {
+  background-color: #0f0e17;
+}
+
+body.active p {
+  color: #a7a9be;
+}
+
+body.active h1, body.active h2, body.active h3, body.active h4, body.active li {
+  color: #FFFFFF;
+}
+
+body.active .header__boton {
+  background-color: #ff8906;
+  padding: 1.5rem 4rem;
+  color: #FFFFFF;
+  font-size: 1.8rem;
+  font-weight: 700;
+  border: none;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+}
+body.active .header__boton:hover {
+  background-color: #d26e00;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  body.active .header__boton {
+    width: auto;
+  }
+}
+
+body.active label {
+  color: #FFFFFF;
+}
+
+body.active .formulario__input, body.active .formulario__select {
+  background-color: #20252C;
+  color: #FFFFFF;
+}
+
+body.active .formulario__input::placeholder {
+  color: #FFFFFF;
+}
+
+body.active .acciones__enlace {
+  color: #FFFFFF;
+}
+
+body.active .barra {
+  background-color: #20252C;
+}
+
+body.active .barra__switch {
+  background-color: #20252C;
+}
+
+body.active .navegacion {
+  background-color: #20252C;
+}
+
+body.active .navegacion__enlace--actual, body.active .navegacion__enlace:hover {
+  background-color: #0f0e17;
+  color: #FFFFFF;
+}
+
+body.active footer {
+  background-color: #20252C;
+}
+
+body.active .footer__copyright {
+  background-color: #0f0e17;
+}
+
+body.active .resumen__texto {
+  color: #FFFFFF;
+}
+
+body.active .resumen__texto--numero {
+  color: #FFFFFF;
+}
+
+body.active .instructor__listado-skills li {
+  color: #FFFFFF;
+  background-color: #20252C;
+}
+
+body.active .instructor-sociales__enlace::before {
+  color: #FFFFFF;
+  font-size: 3rem;
+  display: inline-block;
+  font-style: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 6 Brands";
+}
+body.active .instructor-sociales__enlace[href*="facebook.com"]::before {
+  content: "\f39e";
+}
+body.active .instructor-sociales__enlace[href*="tiktok.com"]::before {
+  content: "\e07b";
+}
+body.active .instructor-sociales__enlace[href*="instagram.com"]::before {
+  content: "\f16d";
+}
+body.active .instructor-sociales__enlace[href*="www.youtube.com"]::before {
+  content: "\f167";
+}
+body.active .instructor-sociales__enlace[href*="x.com"]::before {
+  content: "\f099";
+}
+body.active .instructor-sociales__ocultar {
+  display: none;
+}
+
+body.active .mapa {
+  filter: grayscale(1) invert(1);
+}
+
+body.active .mapa h2 {
+  color: #1a1b15;
+}
+
+body.active .mapa p {
+  color: #1a1b15;
+}
+
+body.active .boleto p {
+  color: #FFFFFF;
+}
+
+body.active .boleto::after, body.active .boleto::before {
+  background-color: #0f0e17;
+}
+
+body.active .evento__unidad {
+  background-color: #20252C;
+  color: #FFFFFF;
+}
+
+body.active .evento__informacion {
+  background-color: #20252C;
+}
+
+body.active .evento__informacion:hover {
+  background-color: #1c2026;
+}
+
+body.active .evento__introduccion {
+  color: #FFFFFF;
+}
+
+body.active .evento__autor-nombre {
+  color: #FFFFFF;
+}
+
+body.active .evento__modalidad {
+  background-color: #0f0e17;
+  color: #FFFFFF;
+  border: 1px solid #0f0e17;
+}
+
 /*Contenedor*/
 .auth {
   width: min(95%, 60rem);
@@ -443,6 +608,12 @@ h3 {
   list-style: none;
   line-height: 2;
 }
+.modalidad__descripcion {
+  font-size: 1.6rem;
+  color: #64748B;
+  margin: 2rem 0;
+  text-align: justify;
+}
 .modalidad__logo {
   font-size: 4rem;
   color: #007df4;
@@ -500,6 +671,9 @@ h3 {
   color: #007df4;
 }
 
+.evento {
+  position: relative;
+}
 .evento__hora {
   font-weight: 700;
 }
@@ -525,6 +699,12 @@ h3 {
 }
 .evento__informacion:hover {
   background-color: #0063c1;
+  cursor: pointer;
+}
+.evento__grupo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .evento__nombre {
   font-size: 2rem;
@@ -547,6 +727,13 @@ h3 {
     -webkit-line-clamp: 2;
   }
 }
+.evento__introduccion--activo {
+  font-size: 1.6rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 .evento__autor-info {
   display: flex;
   gap: 2rem;
@@ -561,6 +748,21 @@ h3 {
 .evento__autor-nombre {
   font-weight: 700;
   font-size: 1.5rem;
+}
+.evento__modalidad {
+  width: 8rem;
+  height: 3rem;
+  background-color: #eafef3;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-inline: 1rem;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #2ecc71;
+  border-radius: 10rem;
+  margin: 1rem 0;
+  border: 1px solid #2ecc71;
 }
 
 .resumen {
@@ -1254,6 +1456,7 @@ h3 {
   background-color: #FFFFFF;
   color: #007df4;
   transition: background-color 0.3s ease;
+  border-radius: 1rem;
 }
 
 .footer {

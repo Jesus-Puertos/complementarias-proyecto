@@ -1,0 +1,142 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+//globales
+body.active{
+    background-color: v.$body-oscuro;
+ }
+
+ body.active p{
+    color: v.$parrafos-oscuro;
+ }
+
+
+ body.active h1, body.active h2, body.active h3, body.active h4, body.active li{
+    color: v.$blanco;
+ }
+
+ body.active .header__boton{
+   @include m.boton(v.$naranja, v.$blanco);
+   @include m.tablet{ 
+        width: auto;
+   }
+
+ }
+
+//formulario
+ body.active label{
+    color: v.$blanco;
+ }
+
+ body.active .formulario__input, body.active .formulario__select{
+    background-color: v.$componentes;
+    color: v.$blanco;
+ }
+
+ body.active .formulario__input::placeholder{
+    color: v.$blanco;
+ }
+
+ body.active .acciones__enlace{
+    color: v.$blanco;
+ }
+
+//barra de navegacion
+ body.active .barra{
+    background-color: v.$componentes; 
+ }
+ body.active .barra__switch{
+    background-color: v.$componentes; 
+ }
+
+ body.active .navegacion{
+   background-color: v.$componentes;
+ }
+
+ body.active .navegacion__enlace--actual, body.active .navegacion__enlace:hover{
+      background-color: v.$body-oscuro;
+      color: v.$blanco;
+ }
+
+//footer
+ body.active footer{
+    background-color: v.$componentes; 
+
+ }
+
+ body.active .footer__copyright{
+    background-color: v.$body-oscuro;
+ }
+
+
+ //Resumen
+ body.active .resumen__texto{
+   color: v.$blanco;
+
+ }
+
+ body.active .resumen__texto--numero{
+   color: v.$blanco;
+   }
+
+   //instrutores
+   body.active .instructor__listado-skills li{
+      color: v.$blanco;
+      background-color: v.$componentes;
+      
+   }
+ body.active .instructor-sociales{
+      @include m.menu-social(v.$blanco, 3rem);
+   }
+ 
+//mapa
+
+body.active .mapa{
+filter: grayscale(1) invert(1);}
+
+body.active .mapa h2{
+   color: v.$negro;
+}
+body.active .mapa p{
+   color: v.$negro;
+}
+
+//Boletos
+ body.active .boleto p{
+   color: v.$blanco;
+   }
+
+ body.active .boleto::after,body.active .boleto::before{
+    background-color: v.$body-oscuro;
+ }
+
+
+//Swiper
+body.active .evento__unidad{
+   background-color: v.$componentes;
+   color: v.$blanco;
+
+
+}
+
+body.active .evento__informacion{
+   background-color: v.$componentes;
+}
+body.active .evento__informacion:hover{
+   background-color: darken(v.$componentes, 2%);
+}
+
+body.active .evento__introduccion{
+   color: v.$blanco;
+}
+
+body.active .evento__autor-nombre{
+   color: v.$blanco;
+}
+
+body.active .evento__modalidad{
+   background-color: v.$body-oscuro;
+   color: v.$blanco;
+   border: 1px solid v.$body-oscuro;
+}
+

@@ -7,3 +7,4 @@ import "./botonHamburguesa.js";
 import "./mapa.js";
 import "./boletosMovimiento.js";
 import "./botonModoOscuro.js";
+import "./cardFullView.js";

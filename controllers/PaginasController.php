@@ -3,12 +3,14 @@
 namespace Controllers;
 
 use Model\Evento;
+use Model\Modalidad;
 use MVC\Router;
 use Model\Categoria;
 use Model\Dia;
 use Model\Hora;
 use Model\Instructor;
 use Model\Unidad;
+
 
 class PaginasController
 {
@@ -73,6 +75,7 @@ class PaginasController
         $eventos_formateados = [];
         foreach ($eventos as $evento) {
             $evento->categoria = Categoria::find($evento->categoria_id);
+            $evento->modalidad = Modalidad::find($evento->modalidad_id);
             $evento->dia = Dia::find($evento->dia_id);
             $evento->hora = Hora::find($evento->hora_id);
             $evento->unidad = Unidad::find($evento->unidad_id);
@@ -130,6 +133,7 @@ class PaginasController
         $eventos_formateados = [];
         foreach ($eventos as $evento) {
             $evento->categoria = Categoria::find($evento->categoria_id);
+            $evento->modalidad = Modalidad::find($evento->modalidad_id);
             $evento->dia = Dia::find($evento->dia_id);
             $evento->hora = Hora::find($evento->hora_id);
             $evento->unidad = Unidad::find($evento->unidad_id);
@@ -185,6 +189,7 @@ class PaginasController
         $eventos_formateados = [];
         foreach ($eventos as $evento) {
             $evento->categoria = Categoria::find($evento->categoria_id);
+            $evento->modalidad = Modalidad::find($evento->modalidad_id);
             $evento->dia = Dia::find($evento->dia_id);
             $evento->hora = Hora::find($evento->hora_id);
             $evento->unidad = Unidad::find($evento->unidad_id);
