@@ -76,6 +76,7 @@ $router->get('/complementarias-lista', [PaginasController::class, 'listaDeComple
 $router->get('/proyecto-integrador', [PaginasController::class, 'proyectoIntegrador']);
 $router->get('/compromiso', [PaginasController::class, 'compromiso']);
 $router->get('/curso', [PaginasController::class, 'curso']);
+$router->get('/404', [PaginasController::class, 'error']);
 
 
 
