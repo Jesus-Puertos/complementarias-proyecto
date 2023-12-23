@@ -749,8 +749,23 @@ body.active .evento__modalidad {
   font-weight: 700;
   font-size: 1.5rem;
 }
-.evento__modalidad {
+.evento__modalidad.presencial {
   width: 8rem;
+  height: 3rem;
+  background-color: #eafef3;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-inline: 1rem;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #2ecc71;
+  border-radius: 10rem;
+  margin: 1rem 0;
+  border: 1px solid #2ecc71;
+}
+.evento__modalidad.virtual {
+  width: 5rem;
   height: 3rem;
   background-color: #eafef3;
   display: flex;

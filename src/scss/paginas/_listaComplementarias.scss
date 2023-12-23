@@ -170,8 +170,24 @@ $modificador: &;
     font-size: 1.5rem;
  }
 
- &__modalidad{
+ &__modalidad.presencial{
     width: 8rem;
+    height: 3rem;      
+    background-color: #eafef3;
+    display: flex;
+    align-items: center; // Cambiado de center a flex-end
+    justify-content: flex-end;
+    padding-inline: 1rem;   
+    font-size: 1.6rem;
+    font-weight: v.$black;
+    color: #2ecc71;
+    border-radius: 10rem;
+    margin: 1rem 0;
+    border: 1px solid #2ecc71;
+}
+
+&__modalidad.virtual{
+    width: 5rem;
     height: 3rem;      
     background-color: #eafef3;
     display: flex;

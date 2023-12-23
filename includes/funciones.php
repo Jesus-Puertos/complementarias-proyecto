@@ -39,6 +39,16 @@ function is_admin(): bool
     return isset($_SESSION['admin']) && !empty($_SESSION['admin']);
 }
 
+function aos_animacion(): void
+{
+    $efectos = ['fade-up', 'fade-down', 'fade-left', 'fade-right', 'flip-left', 'flip-right', 'zoom-in', 'zoom-in-up', 'zoom-in-down', 'zoom-in-out'];
+
+    $efecto = array_rand($efectos, 1);
+
+    echo ' data-aos="' . $efectos[$efecto] . '" ';
+}
+
+
 function mensajeAlerta($variable)
 {
     switch ($variable) {

@@ -7,7 +7,7 @@
 
     <div class="complementarias__grid">
 
-        <div class="complementarias__imagen">
+        <div <?php aos_animacion() ?> class="complementarias__imagen">
             <picture>
                 <source srcset="build/img/sobre_complementarias.avif" type="image/avif">
                 <source srcset="build/img/sobre_complementarias.webp" type="image/webp">
@@ -17,11 +17,13 @@
         </div>
 
         <div class="complementarias__contenido">
-            <p class="complementarias__texto">Las actividades extraescolares se encaminan a potenciar la apertura de
+            <p <?php aos_animacion() ?> class="complementarias__texto">Las actividades extraescolares se encaminan a
+                potenciar la apertura de
                 nuevas formas de desarrollar las habilidades de nuestros estudiantes así como su entorno y a procurar la
                 formación integral del alumnado, En aspectos referidos a la ampliación de su horizonte cultural y
                 deportivo, la preparación para su inserción en la sociedad o el uso del tiempo libre.</p>
-            <p class="complementarias__texto">El ITSZ está comprometido con este programa de formación profesional y
+            <p <?php aos_animacion() ?> class="complementarias__texto">El ITSZ está comprometido con este programa de
+                formación profesional y
                 mediante su departamento de Actividades Complementarias se ofertaran actividades Extraescolares, en las
                 cuales se ofrecerán diversas actividades deportivas y culturales.</p>
         </div>

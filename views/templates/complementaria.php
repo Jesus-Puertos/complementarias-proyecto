@@ -13,7 +13,8 @@
             <h4 class="evento__nombre">
                 <?php echo $evento->nombre; ?>
             </h4>
-            <p class="evento__modalidad">
+            <p
+                class="evento__modalidad <?php echo $evento->modalidad->nombre == 'Presencial' ? 'presencial' : 'virtual'; ?>">
                 <?php echo $evento->modalidad->nombre; ?>
             </p>
         </div>

@@ -40,7 +40,7 @@ include_once __DIR__ . '/complementarias-lista.php';
     <p class="instructores__descripcion">Conoce a los expertos</p>
     <div class="instructores__grid">
         <?php foreach ($instructores as $instructor) { ?>
-            <div class="instructor">
+            <div <?php aos_animacion() ?> class="instructor">
                 <picture>
                     <source srcset="img/instructores/<?php echo $instructor->imagen;
                     ; ?>.webp" type="image/webp">
