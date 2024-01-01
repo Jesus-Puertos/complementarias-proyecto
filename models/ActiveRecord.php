@@ -1,6 +1,9 @@
 <?php
 namespace Model;
 
+
+
+
 class ActiveRecord
 {
 
@@ -8,6 +11,39 @@ class ActiveRecord
     protected static $db;
     protected static $tabla = '';
     protected static $columnasDB = [];
+
+    //Declaracion explicita de variables
+    public $id;
+    public $evento;
+    public $evento_id;
+    public $registro;
+    public $registro_id;
+    public $usuario_id;
+
+    public $usuario;
+    public $paquete_id;
+    public $paquete;
+
+    public $categoria_id;
+
+    public $resultado;
+
+    public $token;
+    public $dia;
+    public $dia_id;
+    public $hora;
+    public $hora_id;
+    public $modalidad;
+    public $unidad;
+    public $instructor;
+    public $categoria;
+    public $nombre;
+    public $apellido;
+    public $correo;
+    public $telefono;
+
+
+
 
     // Alertas y Mensajes
     protected static $alertas = [];

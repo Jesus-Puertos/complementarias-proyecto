@@ -1,0 +1,112 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.complementarias-registro{
+    @include m.contenedor;
+
+    @include m.tablet{
+        display: flex;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+ 
+   
+
+    &__listado{
+@include m.tablet{
+    flex: 0 0 60%;
+        }
+    }
+
+    &__grid{
+        @include m.grid(1, 3rem);
+        @include m.tablet{
+            @include m.grid(2, 3rem);        
+        }
+    }
+
+    &__fecha{
+        &--proyecto, &--compromiso, &--curso{
+            margin: 6rem 0 3rem 0;
+            white-space: nowrap;
+            font-weight: v.$bold;
+            @include m.texto-fluido(3rem,4rem);
+        }
+        &--proyecto{
+            color: v.$azul;
+        }
+        &--compromiso{
+            color: v.$secundario;
+        }
+        &--curso{
+            color: v.$azul;
+        }
+        
+    }
+
+    &__heading{
+        &--proyecto,&--compromiso,&--curso{
+            white-space: nowrap;
+            @include m.texto-fluido(2rem,5rem);
+
+        }
+        &--proyecto{
+            color: v.$azul;}
+           
+        &--compromiso{
+            color: v.$secundario;
+            margin-top: 5rem;
+        }
+        &--curso{
+            color: v.$azul;
+            margin-top: 5rem;
+        }
+    }
+}
+
+.registro{
+    background-color: v.$gris-claro;
+    padding: 3rem;
+    border-radius: 1.6rem;
+    @include m.tablet{
+        flex: 0 0 40%;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 3rem;
+    }
+    
+    &__heading{
+        margin:  0 0 3rem 0;
+    }
+
+    &__evento{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        &:nth-child(even){
+            background-color: darken(v.$gris-claro, 5%);
+        }
+    }
+
+    &__nombre{
+        font-size: 2rem;
+        font-weight: v.$bold;
+        margin: 1rem 0;
+    }
+
+    &__eliminar{
+        all: unset;
+        color: v.$rojo;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+    &__texto{
+        text-align: center;
+    }
+
+   
+}

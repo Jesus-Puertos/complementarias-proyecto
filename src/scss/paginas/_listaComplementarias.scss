@@ -170,6 +170,16 @@ $modificador: &;
     font-size: 1.5rem;
  }
 
+ &__agregar{
+    @include m.boton(v.$blanco, v.$negro);
+    margin-top: 1rem;
+
+    &:disabled{
+        opacity: .5;
+        cursor: not-allowed;
+    }
+ }
+
  &__modalidad.presencial{
     width: 8rem;
     height: 3rem;      
@@ -178,7 +188,7 @@ $modificador: &;
     align-items: center; // Cambiado de center a flex-end
     justify-content: flex-end;
     padding-inline: 1rem;   
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: v.$black;
     color: #2ecc71;
     border-radius: 10rem;
@@ -189,16 +199,47 @@ $modificador: &;
 &__modalidad.virtual{
     width: 5rem;
     height: 3rem;      
+    background-color: #fff6e5;
+    display: flex;
+    align-items: center; // Cambiado de center a flex-end
+    justify-content: flex-end;
+    padding-inline: 1rem;   
+    font-size: 1.4rem;
+    font-weight: v.$black;
+    color: #f4bd50;
+    border-radius: 10rem;
+    margin: 1rem 0;
+    border: 1px solid #f4bd50;
+}
+
+&__modalidad-registro.presencial{
+    width: 10rem;
+    height: 3rem;      
     background-color: #eafef3;
     display: flex;
     align-items: center; // Cambiado de center a flex-end
     justify-content: flex-end;
     padding-inline: 1rem;   
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: v.$black;
     color: #2ecc71;
     border-radius: 10rem;
     margin: 1rem 0;
     border: 1px solid #2ecc71;
 }
+
+&__modalidad-registro.virtual{
+    width: 7rem;
+    height: 3rem;      
+    background-color: #fff6e5;
+    display: flex;
+    align-items: center; // Cambiado de center a flex-end
+    justify-content: flex-end;
+    padding-inline: 1rem;   
+    font-size: 1.4rem;
+    font-weight: v.$black;
+    color: #f4bd50;
+    border-radius: 10rem;
+    margin: 1rem 0;
+    border: 1px solid #f4bd50;}
 }

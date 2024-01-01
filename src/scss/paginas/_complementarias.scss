@@ -26,3 +26,30 @@
         line-height: 2;
     }
 }
+
+.objetivo{
+    margin-top: 5rem;
+    &__grid{
+        @include m.contenedor;
+        @include m.grid(1, 3rem);
+
+        @include m.desktop{
+            @include m.grid(2, 5rem);
+            align-items: center;
+        }
+        
+    }
+
+    &__listado{
+            font-size: 2rem;
+            line-height: 1.5;
+
+            &--lista{
+                @include m.reset-lista;
+                list-style: number;
+                padding: 0;
+                margin-bottom: 3rem;
+            }
+         }
+
+}

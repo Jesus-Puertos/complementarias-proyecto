@@ -10,6 +10,10 @@ body.active{
     color: v.$parrafos-oscuro;
  }
 
+ body.active ul li{
+   color: v.$parrafos-oscuro;
+}
+
 
  body.active h1, body.active h2, body.active h3, body.active h4, body.active li{
     color: v.$blanco;
@@ -132,11 +136,5 @@ body.active .evento__introduccion{
 
 body.active .evento__autor-nombre{
    color: v.$blanco;
-}
-
-body.active .evento__modalidad{
-   background-color: v.$body-oscuro;
-   color: v.$blanco;
-   border: 1px solid v.$body-oscuro;
 }
 

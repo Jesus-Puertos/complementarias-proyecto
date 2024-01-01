@@ -59,8 +59,14 @@
             <a href="/complementarias-lista"
                 class="navegacion__enlace <?php echo pagina_actual('/complementarias-lista') ? 'navegacion__enlace--actual' : ''; ?>">Lista
                 de complementarias</a>
-            <a href="/registro"
-                class="navegacion__enlace <?php echo pagina_actual('/registro') ? 'navegacion__enlace--actual' : ''; ?>">Registro</a>
+            <?php
+            $link = is_auth() ? '/perfil' : '/registro';
+            $linkText = is_auth() ? 'Perfil' : 'Registro';
+            ?>
+            <a href="<?php echo $link; ?>"
+                class="navegacion__enlace <?php echo pagina_actual($link) ? 'navegacion__enlace--actual' : ''; ?>">
+                <?php echo $linkText; ?>
+            </a>
 
         </nav>
     </div>

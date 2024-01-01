@@ -1,0 +1,84 @@
+@use 'base/_variables' as v;
+@use 'base/_mixins' as m;
+.profile {
+    @include m.contenedor;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 6px;
+    background-color: #f3f3f3;
+}
+
+.profile__sidebar {
+    width: 100%;
+}
+
+.profile__content {
+    width: 100%;
+}
+
+.profile-card,
+.activity-card {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.profile-card__header,
+.activity-card__header {
+    padding: 6px;
+}
+
+.profile-card__avatar {
+    height: 20px;
+    width: 20px;
+    background-color: #ccc;
+}
+
+.profile-card__info {
+    display: grid;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.profile-card__name {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.profile-card__email {
+    color: #888;
+}
+
+.profile-card__body {
+    padding: 6px;
+}
+
+.profile-card__activity-title,
+.profile-card__statistics-title,
+.activity-card__title {
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
+.profile-card__button {
+    height: 40px;
+    padding: 0 16px;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.profile-card__button--edit {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.profile-card__button--logout {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #333;
+}

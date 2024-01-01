@@ -8,3 +8,4 @@ import "./mapa.js";
 import "./boletosMovimiento.js";
 import "./botonModoOscuro.js";
 import "./cardFullView.js";
+import "./registro.js";

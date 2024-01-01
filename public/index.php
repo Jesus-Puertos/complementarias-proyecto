@@ -13,6 +13,7 @@ use Controllers\DashboardController;
 use Controllers\ComplementariasController;
 use Controllers\InstructoresController;
 use Controllers\RegistradosController;
+use Controllers\RegistroController;
 
 
 $router = new Router();
@@ -67,6 +68,20 @@ $router->get('/api/instructor', [APIInstructores::class, 'instructor']);
 $router->get('/admin/registrados', [RegistradosController::class, 'index']);
 
 
+//Registro de usuarios
+$router->get('/finalizar-registro', [RegistroController::class, 'crear']);
+$router->post('/finalizar-registro/presencial', [RegistroController::class, 'presencial']);
+$router->post('/finalizar-registro/virtual', [RegistroController::class, 'virtual']);
+
+$router->get('/finalizar-registro/complementarias', [RegistroController::class, 'complementarias']);
+$router->post('/finalizar-registro/complementarias', [RegistroController::class, 'complementarias']);
+
+
+//boleto presencial
+$router->get('/boleto', [RegistroController::class, 'boleto']);
+
+
+
 //Area Publica
 
 $router->get('/', [PaginasController::class, 'index']);
@@ -77,6 +92,9 @@ $router->get('/proyecto-integrador', [PaginasController::class, 'proyectoIntegra
 $router->get('/compromiso', [PaginasController::class, 'compromiso']);
 $router->get('/curso', [PaginasController::class, 'curso']);
 $router->get('/404', [PaginasController::class, 'error']);
+
+//Vista del resumen del usuario
+$router->get('/perfil', [PaginasController::class, 'perfil']);
 
 
 

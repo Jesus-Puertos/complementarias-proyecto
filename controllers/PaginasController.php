@@ -10,6 +10,7 @@ use Model\Dia;
 use Model\Hora;
 use Model\Instructor;
 use Model\Unidad;
+use Model\Usuario;
 
 
 class PaginasController
@@ -242,4 +243,26 @@ class PaginasController
             'titulo' => 'Error 404'
         ]);
     }
+
+    public static function perfil(Router $router)
+    {
+
+        // Comprobar si el usuario está autenticado
+        if (!isset($_SESSION['id'])) {
+            header('Location: /login');
+            return;
+        }
+
+        // Obtener el usuario autenticado
+        $usuario = Usuario::find($_SESSION['id']);
+
+        // Pasar la información del usuario a la vista
+        $router->render('paginas/perfil', [
+            'titulo' => 'Perfil',
+            'usuario' => $usuario
+        ]);
+
+    }
+
+
 }

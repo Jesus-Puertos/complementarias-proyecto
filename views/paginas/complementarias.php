@@ -29,3 +29,48 @@
         </div>
     </div>
 </main>
+
+<section class="objetivo">
+    <h2 class="objetivo__heading">
+        Objetivos
+    </h2>
+    <p class="objetivo__descripcion">¿Cuáles son los objetivos de las complementarias?</p>
+
+    <div class="objetivo__grid">
+
+        <div class="objetivo__contenido">
+            <ul class="objetivo__listado">
+                <li class="objetivo__listado--lista">Conformar los selectivos
+                    para representar al
+                    Instituto en eventos
+                    deportivos o culturales.
+                </li>
+                <li class="objetivo__listado--lista">Fortalecer la formación
+                    integral de nuestros
+                    estudiantes, mediante
+                    actividades de esparcimiento.
+                </li>
+                <li class="objetivo__listado--lista">Promover la salud,
+                    mediante actividades
+                    física-mentales.
+                </li>
+            </ul>
+
+
+        </div>
+
+
+
+        <div data-aos="fade-left" class="objetivo__imagen">
+            <picture>
+                <source srcset="build/img/sobre_complementarias-objetivos.avif" type="image/avif">
+                <source srcset="build/img/sobre_complementarias-objetivos.webp" type="image/webp">
+                <img loading="lazy" width="200" height="300" src="build/img/sobre_complementarias-objetivos.jpg"
+                    type="image/jpg" alt="Imagen sobre las complementarias" style="border-radius: 2px;">
+            </picture>
+        </div>
+
+
+
+    </div>
+</section>

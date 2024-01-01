@@ -14,6 +14,8 @@
 
     }
 
+   
+
     
 }
 
@@ -44,7 +46,8 @@
         font-size: 1.6rem;
         color: v.$gris;
         margin: 2rem 0;
-        text-align: justify;
+        text-align: left;
+        text-wrap: balance;
     }
 
     &__logo{
@@ -54,4 +57,13 @@
         font-weight: v.$black;
         text-align: center;
     }
+
+    &__submit{
+        @include m.boton(v.$azul, v.$blanco);
+        margin-top: 3rem;
+
+        
+    
+        }
+    
 }

@@ -23,6 +23,8 @@ function pagina_actual($path): bool
     }
 }
 
+session_start();
+
 function is_auth(): bool
 {
     if (!isset($_SESSION)) {
@@ -41,7 +43,7 @@ function is_admin(): bool
 
 function aos_animacion(): void
 {
-    $efectos = ['fade-up', 'fade-down', 'fade-left', 'fade-right', 'flip-left', 'flip-right', 'zoom-in', 'zoom-in-up', 'zoom-in-down', 'zoom-in-out'];
+    $efectos = ['flip-left', 'flip-right', 'zoom-in', 'zoom-in-up', 'zoom-in-down', 'zoom-in-out'];
 
     $efecto = array_rand($efectos, 1);
 

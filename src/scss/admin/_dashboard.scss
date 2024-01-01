@@ -65,11 +65,12 @@
         padding: 2rem;
         transition: all .3s ease, .3s color ease, .3s border-radius ease;
 
-        &:hover,&--actual{
+        &:hover, &--actual{
             background-color: lighten(v.$gris-oscuro,  20);
             color: v.$blanco;
             border-radius: 1rem;
         }
+        
     }
 
     &__icono{
