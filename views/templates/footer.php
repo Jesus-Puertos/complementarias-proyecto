@@ -35,7 +35,9 @@
     <p class="footer__copyright">
         Elaborado por el alumno
         <span class="footer__copyright--regular">
-            -Jesus Alberto Rodriguez Puertos-
+            <a class="footer__copyright--enlace" href="https://jesus-puertosdev.netlify.app/" rel="noopener noreferrer"
+                target="_blank"> -Jesús Alberto
+                Rodriguez Puertos- </a>
             <?php echo date('Y'); ?>
         </span>
     </p>

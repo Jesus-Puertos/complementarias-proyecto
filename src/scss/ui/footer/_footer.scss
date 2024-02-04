@@ -37,5 +37,13 @@
 
         &--regular{
             font-weight: v.$regular;}
+
+            &--enlace{
+                color: v.$blanco;
+                text-decoration: none;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
     }
 }

@@ -69,7 +69,7 @@ body.active{
  }
 
  body.active .footer__copyright{
-    background-color: v.$body-oscuro;
+    background-color: darken(v.$componentes, 2);
  }
 
 
@@ -135,6 +135,12 @@ body.active .evento__introduccion{
 }
 
 body.active .evento__autor-nombre{
+   color: v.$blanco;
+}
+
+//perfil
+body.active .perfil__info{
+   background-color: v.$componentes;
    color: v.$blanco;
 }
 

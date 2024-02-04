@@ -37,6 +37,7 @@
     text-align: center;
     width: 100%;
     display: inline-block;
+    border-radius: 5px;
 
     &:hover {
         background-color: darken($bgColor, 10%);
@@ -201,4 +202,8 @@ font-size: clamp($min,  -0.8rem + 10vw  ,$max);
         font-size: 2.6rem;
         margin: 2rem 0;
     }
+}
+
+@mixin bg-gradient($bg_color){
+    background-image: linear-gradient(to right, $bg_color, lighten($bg_color, 10%));
 }

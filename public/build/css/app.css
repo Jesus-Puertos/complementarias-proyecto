@@ -313,7 +313,7 @@ html {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Onest", sans-serif;
   font-size: 1.8rem;
 }
 
@@ -338,7 +338,7 @@ nav img {
 h1,
 h2,
 h3 {
-  font-family: "Poppins", sans-serif;
+  font-family: "Onest", sans-serif;
   font-weight: 900;
   margin: 2rem 0;
 }
@@ -360,7 +360,7 @@ h3 {
 }
 
 [class$=__heading] {
-  font-family: "Poppins", sans-serif;
+  font-family: "Onest", sans-serif;
   font-weight: 900;
   margin: 2rem 0;
   margin: 6rem 0 3rem 0;
@@ -403,6 +403,7 @@ body.active .header__boton {
   text-align: center;
   width: 100%;
   display: inline-block;
+  border-radius: 5px;
 }
 body.active .header__boton:hover {
   background-color: #d26e00;
@@ -453,7 +454,7 @@ body.active footer {
 }
 
 body.active .footer__copyright {
-  background-color: #0f0e17;
+  background-color: #1c2026;
 }
 
 body.active .resumen__texto {
@@ -535,6 +536,11 @@ body.active .evento__introduccion {
 }
 
 body.active .evento__autor-nombre {
+  color: #FFFFFF;
+}
+
+body.active .perfil__info {
+  background-color: #20252C;
   color: #FFFFFF;
 }
 
@@ -667,6 +673,7 @@ body.active .evento__autor-nombre {
   text-align: center;
   width: 100%;
   display: inline-block;
+  border-radius: 5px;
   margin-top: 3rem;
 }
 .modalidad__submit:hover {
@@ -813,6 +820,7 @@ body.active .evento__autor-nombre {
   text-align: center;
   width: 100%;
   display: inline-block;
+  border-radius: 5px;
   margin-top: 1rem;
 }
 .evento__agregar:hover {
@@ -829,7 +837,7 @@ body.active .evento__autor-nombre {
   background-color: #eafef3;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   padding-inline: 1rem;
   font-size: 1.4rem;
   font-weight: 900;
@@ -1186,6 +1194,7 @@ body.active .evento__autor-nombre {
   text-align: center;
   width: 100%;
   display: inline-block;
+  border-radius: 5px;
   width: auto;
 }
 .boleto__enlace:hover {
@@ -1266,6 +1275,7 @@ body.active .evento__autor-nombre {
   text-align: center;
   width: 100%;
   display: inline-block;
+  border-radius: 5px;
   width: auto;
   margin-top: 5rem;
   display: flex;
@@ -1324,6 +1334,7 @@ body.active .evento__autor-nombre {
   text-align: center;
   width: 100%;
   display: inline-block;
+  border-radius: 5px;
   width: 50%;
 }
 .pagina_404__enlace:hover {
@@ -1579,88 +1590,93 @@ body.active .evento__autor-nombre {
     transform: scale(0.98);
   }
 }
-.profile {
+.perfil {
   width: min(95%, 140rem);
   margin: 0 auto;
+}
+.perfil__header {
+  min-height: 30rem;
+  margin-top: 2rem;
+  border-radius: 1.6rem;
+  background-image: url("../img/perfil-header.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.perfil__navegacion {
+  padding: 5rem 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.5rem;
+  position: relative;
+  top: 18rem;
+}
+.perfil__form {
+  display: flex;
+}
+.perfil__submit {
+  background-color: #007df4;
+  padding: 1.5rem 4rem;
+  color: #FFFFFF;
+  font-size: 1.8rem;
+  font-weight: 700;
+  border: none;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+  border-radius: 5px;
+}
+.perfil__submit:hover {
+  background-color: #0063c1;
+  cursor: pointer;
+}
+.perfil__info {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 6px;
-  background-color: #f3f3f3;
+  margin-top: 5rem;
+  border-radius: 1.6rem;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
 }
-
-.profile__sidebar {
-  width: 100%;
+.perfil__contenedor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
 }
-
-.profile__content {
-  width: 100%;
+@media (min-width: 768px) {
+  .perfil__contenedor {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+  }
 }
-
-.profile-card,
-.activity-card {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #fff;
-  color: #333;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 100%;
+.perfil__datos {
+  width: auto;
+  width: min(100%, 60rem);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  column-gap: 2rem;
 }
-
-.profile-card__header,
-.activity-card__header {
-  padding: 6px;
+.perfil__dato {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #64748B;
 }
-
-.profile-card__avatar {
-  height: 20px;
-  width: 20px;
-  background-color: #ccc;
+.perfil__dato:last-child {
+  border-bottom: none;
 }
-
-.profile-card__info {
-  display: grid;
-  gap: 0.5rem;
-  font-size: 0.875rem;
-}
-
-.profile-card__name {
-  font-size: 1.25rem;
-  font-weight: 500;
-}
-
-.profile-card__email {
-  color: #888;
-}
-
-.profile-card__body {
-  padding: 6px;
-}
-
-.profile-card__activity-title,
-.profile-card__statistics-title,
-.activity-card__title {
-  font-size: 1.125rem;
+.perfil__dato--titulo {
+  font-size: 1.8rem;
   font-weight: 700;
-}
-
-.profile-card__button {
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 4px;
-  font-size: 0.875rem;
-  font-weight: 500;
-}
-
-.profile-card__button--edit {
-  background-color: #007bff;
-  color: #fff;
-}
-
-.profile-card__button--logout {
-  border: 1px solid #ccc;
-  background-color: #fff;
-  color: #333;
+  color: #64748B;
+  margin: 2rem 0;
 }
 
 .formulario {
@@ -1682,6 +1698,11 @@ body.active .evento__autor-nombre {
   flex-direction: column;
   gap: 1rem;
   margin: 1.5rem 0;
+}
+.formulario__campo--actualizar {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
 }
 .formulario__contenedor-icono {
   display: flex;
@@ -1763,6 +1784,7 @@ body.active .evento__autor-nombre {
   text-align: center;
   width: 100%;
   display: inline-block;
+  border-radius: 5px;
   width: auto;
   align-self: flex-start;
 }
@@ -1776,6 +1798,24 @@ body.active .evento__autor-nombre {
 .formulario__submit--full {
   width: 100%;
   margin-top: 2rem;
+}
+.formulario__submit--cancelar {
+  background-color: rgb(169, 0, 0);
+  padding: 1.5rem 4rem;
+  color: #FFFFFF;
+  font-size: 1.8rem;
+  font-weight: 700;
+  border: none;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+  border-radius: 5px;
+}
+.formulario__submit--cancelar:hover {
+  background-color: #760000;
+  cursor: pointer;
 }
 
 .acciones, .acciones--centrar {
@@ -1927,6 +1967,7 @@ body.active .evento__autor-nombre {
   text-align: center;
   width: 100%;
   display: inline-block;
+  border-radius: 5px;
   text-transform: uppercase;
   margin: 2rem 0;
 }
@@ -2039,7 +2080,7 @@ body.active .evento__autor-nombre {
 }
 .navegacion__enlace {
   color: #FFFFFF;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   padding: 2rem;
   font-weight: 900;
   text-transform: uppercase;
@@ -2049,7 +2090,7 @@ body.active .evento__autor-nombre {
   background-color: #FFFFFF;
   color: #007df4;
   transition: background-color 0.3s ease;
-  border-radius: 1rem;
+  border-radius: 9999px;
 }
 
 .footer {
@@ -2101,6 +2142,13 @@ body.active .evento__autor-nombre {
 }
 .footer__copyright--regular {
   font-weight: 400;
+}
+.footer__copyright--enlace {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.footer__copyright--enlace:hover {
+  text-decoration: underline;
 }
 
 .menu-redes {
@@ -2279,6 +2327,7 @@ body.active .evento__autor-nombre {
   text-align: center;
   width: 100%;
   display: inline-block;
+  border-radius: 5px;
   text-transform: uppercase;
   font-size: 1.4rem;
 }
@@ -2430,6 +2479,59 @@ body.active .evento__autor-nombre {
 .listado-instructores__instructor--seleccionado {
   background-color: #007df4;
   color: #FFFFFF;
+}
+
+.bloques {
+  width: min(95%, 140rem);
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .bloques {
+    margin-top: 10rem;
+  }
+}
+.bloques__grid {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+@media (min-width: 1024px) {
+  .bloques__grid {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.bloque {
+  padding: 3rem;
+  color: #FFFFFF;
+  border-radius: 1rem;
+}
+.bloque:nth-child(1) {
+  background-image: linear-gradient(to right, #007df4, #2896ff);
+}
+.bloque:nth-child(2) {
+  background-image: linear-gradient(to right, #02db02, #13fd13);
+}
+.bloque:nth-child(3) {
+  background-image: linear-gradient(to right, #ff8906, #ffa139);
+}
+.bloque__heading {
+  margin: 1rem 0 2rem 0;
+  font-size: 3.5rem;
+}
+.bloque__texto {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin: 1rem 0;
+  text-transform: uppercase;
+}
+.bloque__texto--nombre {
+  font-weight: bold;
 }
 
 .complementarias-registro {

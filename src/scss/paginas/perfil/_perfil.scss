@@ -1,84 +1,95 @@
 @use 'base/_variables' as v;
 @use 'base/_mixins' as m;
-.profile {
+
+
+.perfil{
+
     @include m.contenedor;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 6px;
-    background-color: #f3f3f3;
-}
 
-.profile__sidebar {
-    width: 100%;
-}
 
-.profile__content {
-    width: 100%;
-}
+    &__header{
+        min-height: 30rem;
+        margin-top: 2rem;
+        border-radius: 1.6rem;
+        background-image: url('../img/perfil-header.webp');
+        background-size: cover;
+        background-position:  center;
+        background-repeat: no-repeat;
+        
+        
+    }
 
-.profile-card,
-.activity-card {
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #fff;
-    color: #333;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 100%;
-}
+    &__navegacion{
+        padding: 5rem 0;
+        display: flex;
+        justify-content: flex-end;
+        gap: 1.5rem;
+        position: relative;
+        top: 18rem;
+       
+    }
 
-.profile-card__header,
-.activity-card__header {
-    padding: 6px;
-}
+    &__form{
+        display: flex;
+    }
 
-.profile-card__avatar {
-    height: 20px;
-    width: 20px;
-    background-color: #ccc;
-}
 
-.profile-card__info {
-    display: grid;
-    gap: 0.5rem;
-    font-size: 0.875rem;
-}
+    &__submit{
+        @include m.boton(v.$azul, v.$blanco);
+       
+    }
 
-.profile-card__name {
-    font-size: 1.25rem;
-    font-weight: 500;
-}
+    &__info{
+        display: flex;
+        flex-direction: column;       
+        margin-top: 5rem;
+        border-radius: 1.6rem;
+        background-color: v.$blanco;
+        box-shadow: 0 0 1rem rgba(0,0,0,.2);
+    }
 
-.profile-card__email {
-    color: #888;
-}
+    &__contenedor{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        @include m.tablet{
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        
+    }
 
-.profile-card__body {
-    padding: 6px;
-}
+    &__datos{
+        width: auto;
+        width: min(100%, 60rem);
+        display: flex;
+       justify-content: center;  
+       flex-direction: column;   
+       column-gap: 2rem;
+    }
 
-.profile-card__activity-title,
-.profile-card__statistics-title,
-.activity-card__title {
-    font-size: 1.125rem;
-    font-weight: 700;
-}
+    &__dato{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 2rem;
+        padding: 1rem 2rem;
+        border-bottom: 1px solid v.$gris;
+        &:last-child{
+            border-bottom: none;
+        }
+        &--titulo{
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: v.$gris;
+            margin: 2rem 0;
+        }
+    }
 
-.profile-card__button {
-    height: 40px;
-    padding: 0 16px;
-    border-radius: 4px;
-    font-size: 0.875rem;
-    font-weight: 500;
-}
 
-.profile-card__button--edit {
-    background-color: #007bff;
-    color: #fff;
-}
 
-.profile-card__button--logout {
-    border: 1px solid #ccc;
-    background-color: #fff;
-    color: #333;
+
+
 }

@@ -22,6 +22,12 @@
         flex-direction: column;
         gap: 1rem;
         margin: 1.5rem 0;
+
+        &--actualizar{
+            display: flex;
+            align-items: center;
+            gap: 5rem;
+        }
     }
 
     &__contenedor-icono{
@@ -98,6 +104,10 @@
         &--full{
             width: 100%;
             margin-top: 2rem;
+        }
+
+        &--cancelar{
+            @include m.boton(v.$rojo, v.$blanco);
         }
 
         

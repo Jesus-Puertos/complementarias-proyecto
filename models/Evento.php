@@ -77,5 +77,3 @@ class Evento extends ActiveRecord
     }
 
 }
-
-?>

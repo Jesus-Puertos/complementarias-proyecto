@@ -7,6 +7,7 @@ require_once __DIR__ . '/../includes/app.php';
 use Controllers\APIComplementarias;
 use Controllers\APIInstructores;
 use Controllers\PaginasController;
+use Controllers\PerfilController;
 use MVC\Router;
 use Controllers\AuthController;
 use Controllers\DashboardController;
@@ -94,7 +95,8 @@ $router->get('/curso', [PaginasController::class, 'curso']);
 $router->get('/404', [PaginasController::class, 'error']);
 
 //Vista del resumen del usuario
-$router->get('/perfil', [PaginasController::class, 'perfil']);
+$router->get('/perfil', [PerfilController::class, 'index']);
+$router->post('/actualizar', [PerfilController::class, 'actualizar']);
 
 
 
