@@ -59,7 +59,18 @@
                         <?php echo $usuario->semestre; ?>
                     </span>
                 </div>
-
+                <div class="perfil__dato">
+                    <h4 class="perfil__dato--titulo">Modalidad:</h4>
+                    <span class="perfil__dato-valor">
+                        <?php echo $usuario->modalidad; ?>
+                    </span>
+                </div>
+                <div class="perfil__dato">
+                    <h4 class="perfil__dato--titulo">Género:</h4>
+                    <span class="perfil__dato-valor">
+                        <?php echo $usuario->genero; ?>
+                    </span>
+                </div>
             </div>
 
             <picture>

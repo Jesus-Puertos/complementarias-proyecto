@@ -5,7 +5,7 @@
 
     <!-- PROYECTO Integrador -->
     <div class="categorias">
-        <h3 class="categorias__heading">Proyecto Integrador</h3>
+        <h3 class="categorias__heading">Deportivas</h3>
         <p class="categorias__fecha">Lunes</p>
 
         <div class="categorias__listado slider swiper">

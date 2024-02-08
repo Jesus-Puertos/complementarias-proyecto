@@ -9,23 +9,22 @@
     </p>
     <div class="modalidades__grid-lista">
         <div class="modalidad">
-            <h3 class="modalidad__nombre">Proyecto integrador</h3>
+            <h3 class="modalidad__nombre">Deportivas</h3>
             <p class="modalidad__descripcion">
-                Únete a la emocionante experiencia de crear soluciones innovadoras a desafíos del mundo real. En el
-                Proyecto Integrador, trabajarás en equipos interdisciplinarios para aplicar tus conocimientos teóricos a
-                situaciones prácticas. Esta es tu oportunidad de destacar, colaborar y destacarte en proyectos que
-                marcarán la diferencia.
+                Únete a la emocionante experiencia de practicar deportes y mantener un estilo de vida saludable. En las
+                actividades deportivas, podrás mejorar tus habilidades físicas, desarrollar trabajo en equipo y
+                disfrutar de la competencia amistosa. Descubre nuevas disciplinas y encuentra tu pasión por el deporte.
             </p>
             <a href="/proyecto-integrador" class="header__boton">Ver Proyecto Integrador</a>
         </div>
 
         <div class="modalidad">
-            <h3 class="modalidad__nombre">Compromiso Social</h3>
+            <h3 class="modalidad__nombre">Cultural</h3>
             <p class="modalidad__descripcion">
-                Haz un impacto positivo en tu comunidad y más allá. El Compromiso Social te invita a participar en
-                actividades de voluntariado y proyectos sociales que trascienden las aulas. Desarrolla habilidades de
-                liderazgo, empatía y responsabilidad social mientras contribuyes a crear un cambio significativo en el
-                mundo que te rodea.
+                Sumérgete en la riqueza cultural y artística a través de nuestras actividades culturales. Explora
+                diferentes expresiones artísticas, como música, danza, teatro y más. Aprende sobre diferentes
+                tradiciones y culturas, y amplía tu perspectiva del mundo. Descubre tu creatividad y disfruta de
+                experiencias enriquecedoras.
             </p>
             <a href="/compromiso" class="header__boton">Ver Comprmiso Social</a>
         </div>

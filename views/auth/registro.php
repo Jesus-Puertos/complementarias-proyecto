@@ -68,6 +68,26 @@
       </div>
 
       <div class="formulario__campo">
+         <label for="modalidad" class="formulario__label">Modalidad</label>
+         <select class="formulario__select" id="modalidad" name="modalidad" value="<?php echo $usuario->modalidad; ?>">
+            <option>Seleccionar Modalidad</option>
+            <option>Escolarizado</option>
+            <option>Mixto</option>
+         </select>
+      </div>
+
+
+      <div class="formulario__campo">
+         <label for="genero" class="formulario__label">Género</label>
+         <select class="formulario__select" id="genero" name="genero" value="<?php echo $usuario->genero; ?>">
+            <option>Seleccionar Género</option>
+            <option>Hombre</option>
+            <option>Mujer</option>
+         </select>
+      </div>
+
+
+      <div class="formulario__campo">
          <label for="password" class="formulario__label">Contraseña</label>
          <input type="password" class="formulario__input" placeholder="Tu contraseña" id="password" name="password">
       </div>

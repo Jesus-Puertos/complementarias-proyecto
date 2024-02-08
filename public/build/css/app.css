@@ -587,6 +587,23 @@ body.active .perfil__info {
     align-items: center;
   }
 }
+.objetivo__imagen {
+  border-radius: 2px;
+}
+.objetivo__imagen--creditos {
+  font-size: 1.8rem;
+  line-height: 1.5;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 1024px) {
+  .objetivo__imagen--creditos {
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
 .objetivo__listado {
   font-size: 2rem;
   line-height: 1.5;
@@ -1660,6 +1677,13 @@ body.active .perfil__info {
   justify-content: center;
   flex-direction: column;
   column-gap: 2rem;
+}
+@media (min-width: 768px) {
+  .perfil__datos {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
 }
 .perfil__dato {
   display: flex;

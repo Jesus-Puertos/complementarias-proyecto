@@ -30,7 +30,13 @@
             }
             ?>
             <p class="header__texto header__texto--modalidad">Presencial - Virtual</p>
-            <a href="/registro" class="header__boton">Registrate Aquí</a>
+            <?php
+            if (is_auth()) {
+                echo '<a href="/perfil" class="header__boton">Ver Perfil</a>';
+            } else {
+                echo '<a href="/registro" class="header__boton">Registrate Aquí</a>';
+            }
+            ?>
         </div>
     </div>
 </header>

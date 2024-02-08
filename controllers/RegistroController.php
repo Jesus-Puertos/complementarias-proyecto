@@ -147,10 +147,10 @@ class RegistroController
         // $registro = Registro::where('usuario_id', $usuario_id);
 
         // //Redireccionar a boleto si ya esta registrado
-        // if (isset($registro->usuario_id)) {
+        // if (!isset($registro->usuario_id)) {
         //     header('Location: /boleto?id=' . urlencode($registro->token));
         //     return;
-        // }
+        // }   
 
         $eventos = Evento::ordenar('hora_id', 'ASC');
 

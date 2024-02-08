@@ -68,6 +68,7 @@
                 <img loading="lazy" width="200" height="300" src="build/img/sobre_complementarias-objetivos.jpg"
                     type="image/jpg" alt="Imagen sobre las complementarias" style="border-radius: 2px;">
             </picture>
+            <p class="objetivo__imagen--creditos">Foto tomada por: René Zepahua Tehuintle.</p>
         </div>
 
 

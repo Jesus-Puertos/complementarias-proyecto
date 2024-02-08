@@ -6,7 +6,7 @@
     <!-- PROYECTO Integrador -->
     <!-- COMPRMISO SOCIAL -->
     <div class="categorias categorias--compromiso">
-        <h3 class="categorias__heading">Compromiso Social</h3>
+        <h3 class="categorias__heading">Cultural</h3>
         <p class="categorias__fecha">Lunes</p>
 
         <div class="categorias__listado slider swiper">

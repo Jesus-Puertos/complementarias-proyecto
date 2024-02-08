@@ -15,6 +15,7 @@ use Controllers\ComplementariasController;
 use Controllers\InstructoresController;
 use Controllers\RegistradosController;
 use Controllers\RegistroController;
+use Controllers\AsistenciaController;
 
 
 $router = new Router();

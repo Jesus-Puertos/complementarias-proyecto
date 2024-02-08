@@ -62,7 +62,7 @@
             COMPROMISO SOCIAL
      -->
 
-        <h3 class="complementarias-registro__heading--compromiso">Compromiso Social</h3>
+        <h3 class="complementarias-registro__heading--compromiso">Cursos</h3>
         <p class="complementarias-registro__fecha--compromiso">Lunes</p>
 
 

@@ -37,7 +37,28 @@
             @include m.grid(2, 5rem);
             align-items: center;
         }
+
+       
         
+        
+    }
+
+    &__imagen{
+        border-radius: 2px;
+
+        &--creditos{
+            font-size: 1.8rem;
+            line-height: 1.5;
+            margin-bottom: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @include m.desktop{
+                justify-content: flex-end;
+                align-items: center;
+            }
+           
+        }
     }
 
     &__listado{

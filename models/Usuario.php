@@ -5,7 +5,7 @@ namespace Model;
 class Usuario extends ActiveRecord
 {
     protected static $tabla = 'usuarios';
-    protected static $columnasDB = ['id', 'nombre', 'apellido', 'matricula', 'carrera', 'semestre', 'email', 'password', 'confirmado', 'token', 'admin'];
+    protected static $columnasDB = ['id', 'nombre', 'apellido', 'matricula', 'carrera', 'semestre', 'modalidad', 'genero', 'email', 'password', 'confirmado', 'token', 'admin'];
 
     public $id;
     public $nombre;
@@ -14,6 +14,8 @@ class Usuario extends ActiveRecord
     public $matricula;
     public $carrera;
     public $semestre;
+    public $modalidad;
+    public $genero;
 
     public $password;
     public $password2;
@@ -33,6 +35,8 @@ class Usuario extends ActiveRecord
         $this->matricula = $args['matricula'] ?? '';
         $this->carrera = $args['carrera'] ?? '';
         $this->semestre = $args['semestre'] ?? '';
+        $this->modalidad = $args['modalidad'] ?? '';
+        $this->genero = $args['genero'] ?? '';
         $this->email = $args['email'] ?? '';
         $this->password = $args['password'] ?? '';
         $this->password2 = $args['password2'] ?? '';
@@ -85,6 +89,12 @@ class Usuario extends ActiveRecord
         }
         if ($this->semestre === 'Seleccionar Semestre') {
             self::$alertas['error'][] = 'El Semestre es Obligatorio';
+        }
+        if ($this->modalidad === 'Seleccionar Modalidad') {
+            self::$alertas['error'][] = 'La Modalidad es Obligatoria';
+        }
+        if ($this->genero === 'Seleccionar Género') {
+            self::$alertas['error'][] = 'El Género es Obligatorio';
         }
         if (!$this->password) {
             self::$alertas['error'][] = 'El Password no puede ir vacío';

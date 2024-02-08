@@ -119,7 +119,7 @@ class PaginasController
 
 
         $router->render('paginas/proyecto-integrador', [
-            'titulo' => 'Proyecto Integrador',
+            'titulo' => 'Deportivas',
             'eventos' => $eventos_formateados,
         ]);
 
@@ -177,7 +177,7 @@ class PaginasController
 
 
         $router->render('paginas/compromiso', [
-            'titulo' => 'Compromiso Social',
+            'titulo' => 'Cultural',
             'eventos' => $eventos_formateados,
         ]);
 
