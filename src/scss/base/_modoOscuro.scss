@@ -138,6 +138,18 @@ body.active .evento__autor-nombre{
    color: v.$blanco;
 }
 
+//Registro
+body.active .registro{
+   background-color: v.$componentes;
+   color: v.$blanco;
+}
+
+
+body.active .modalidad__submit{
+   background-color: v.$naranja;
+   color: v.$blanco;
+}
+
 //perfil
 body.active .perfil__info{
    background-color: v.$componentes;

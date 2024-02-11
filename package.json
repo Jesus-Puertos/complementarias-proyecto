@@ -4,7 +4,8 @@
   "description": "Proyecto de complementarias para el ITSZ elaborado por @jesus-puertos",
   "main": "index.js",
   "scripts": {
-    "dev": "gulp dev"
+    "dev": "gulp dev",
+    "build": "gulp build"
   },
   "author": "",
   "license": "ISC",

@@ -539,6 +539,16 @@ body.active .evento__autor-nombre {
   color: #FFFFFF;
 }
 
+body.active .registro {
+  background-color: #20252C;
+  color: #FFFFFF;
+}
+
+body.active .modalidad__submit {
+  background-color: #ff8906;
+  color: #FFFFFF;
+}
+
 body.active .perfil__info {
   background-color: #20252C;
   color: #FFFFFF;

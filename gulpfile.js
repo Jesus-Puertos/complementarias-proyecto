@@ -107,3 +107,11 @@ exports.dev = parallel(
   javascript,
   dev
 );
+exports.build = parallel(
+  css,
+  imagenes,
+  versionWebp,
+  versionAvif,
+  javascript,
+  dev
+);
