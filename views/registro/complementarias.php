@@ -5,7 +5,7 @@
 
 <div class="complementarias-registro">
     <main class="complementarias-registro__listado">
-        <h3 class="complementarias-registro__heading--proyecto">Proyecto Integrador</h3>
+        <h3 class="complementarias-registro__heading--proyecto">Deportivas</h3>
         <p class="complementarias-registro__fecha--proyecto">Lunes</p>
 
 
@@ -128,7 +128,7 @@
         <!-- CURSOS
      -->
 
-        <h3 class="complementarias-registro__heading--curso">Cursos</h3>
+        <h3 class="complementarias-registro__heading--curso">Culturales</h3>
         <p class="complementarias-registro__fecha--curso">Lunes</p>
 
 

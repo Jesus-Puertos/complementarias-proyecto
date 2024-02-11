@@ -68,7 +68,10 @@ $router->get('/api/instructor', [APIInstructores::class, 'instructor']);
 
 
 $router->get('/admin/registrados', [RegistradosController::class, 'index']);
-
+$router->get('/admin/registrados/descargar', function () {
+    $controller = new RegistradosController();
+    $controller->descargar();
+});
 
 //Registro de usuarios
 $router->get('/finalizar-registro', [RegistroController::class, 'crear']);

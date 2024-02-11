@@ -55,7 +55,7 @@ include_once __DIR__ . '/complementarias-lista.php';
                         <?php echo $instructor->nombre . ' ' . $instructor->apellido; ?>
                     </h4>
                     <p class="instructor__ubicacion">
-                        <?php echo $instructor->ciudad . ', ' . $instructor->telefono; ?>
+                        <?php echo $instructor->ciudad . ', ' . $instructor->email; ?>
                     </p>
 
                     <nav class="instructor-sociales">

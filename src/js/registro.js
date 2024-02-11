@@ -16,7 +16,6 @@ import Swal from "sweetalert2";
     function seleccionarEvento({ target }) {
       if (eventos.length <= 0) {
         //Desabilitar evento
-
         target.disabled = true;
         eventos = [
           ...eventos,

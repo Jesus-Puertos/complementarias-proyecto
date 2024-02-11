@@ -5,6 +5,7 @@
     display: flex;
     flex-direction: column;
 
+  
     &__fieldset{
         border: none;
         margin-top: 1rem;
@@ -50,7 +51,7 @@
         display: block;
         font-size: 1.8rem;
         color: rgba(v.$negro, .8);
-        font-weight: 700;
+        font-weight: 700;   
     }
 
     &__input,&__select {
@@ -108,6 +109,13 @@
 
         &--cancelar{
             @include m.boton(v.$rojo, v.$blanco);
+        }
+
+        &--filtro{
+            @include m.boton(v.$gris-oscuro, v.$blanco);
+            width: 100%;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
         }
 
         

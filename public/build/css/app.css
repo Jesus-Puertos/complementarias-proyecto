@@ -1841,6 +1841,27 @@ body.active .perfil__info {
   background-color: #760000;
   cursor: pointer;
 }
+.formulario__submit--filtro {
+  background-color: #1E293B;
+  padding: 1.5rem 4rem;
+  color: #FFFFFF;
+  font-size: 1.8rem;
+  font-weight: 700;
+  border: none;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+  border-radius: 5px;
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.formulario__submit--filtro:hover {
+  background-color: #0d1219;
+  cursor: pointer;
+}
 
 .acciones, .acciones--centrar {
   margin-top: 3rem;
@@ -2363,6 +2384,9 @@ body.active .perfil__info {
   .dashboard__boton {
     width: auto;
   }
+}
+.dashboard__boton--descarga {
+  margin-top: 2rem;
 }
 .dashboard__contenedor, .dashboard__formulario {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;

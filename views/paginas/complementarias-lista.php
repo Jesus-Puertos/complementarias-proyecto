@@ -15,7 +15,7 @@
                 actividades deportivas, podrás mejorar tus habilidades físicas, desarrollar trabajo en equipo y
                 disfrutar de la competencia amistosa. Descubre nuevas disciplinas y encuentra tu pasión por el deporte.
             </p>
-            <a href="/proyecto-integrador" class="header__boton">Ver Proyecto Integrador</a>
+            <a href="/proyecto-integrador" class="header__boton">Ver Deportivas</a>
         </div>
 
         <div class="modalidad">
@@ -26,7 +26,7 @@
                 tradiciones y culturas, y amplía tu perspectiva del mundo. Descubre tu creatividad y disfruta de
                 experiencias enriquecedoras.
             </p>
-            <a href="/compromiso" class="header__boton">Ver Comprmiso Social</a>
+            <a href="/compromiso" class="header__boton">Ver Culturales</a>
         </div>
 
         <div class="modalidad">

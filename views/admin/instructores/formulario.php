@@ -27,20 +27,29 @@
     </div>
 
     <div class="formulario__campo">
+        <label for="email" class="formulario__label">Correo Electronico</label>
+        <input type="email" class="formulario__input" id="email" name="email" placeholder="Correo del instructor"
+            value="<?php echo $instructor->email ?? ''; ?>">
+    </div>
+
+
+    <div class="formulario__campo">
         <label for="imagen" class="formulario__label">Imagen</label>
         <input type="file" class="formulario__input formulario__input--file" id="imagen" name="imagen">
     </div>
 
-    <?php if(isset($instructor->imagen_actual)) { ?>
+    <?php if (isset($instructor->imagen_actual)) { ?>
         <p class="formulario__texto">
             Imagen actual:
         </p>
         <div class="formulario__imagen">
             <picture>
-                <source srcset="<?php echo $_ENV['HOST'].'/img/instructores/'.$instructor->imagen; ?>.webp"
+                <source srcset="<?php echo $_ENV['HOST'] . '/img/instructores/' . $instructor->imagen; ?>.webp"
                     type="image/webp">
-                <source srcset="<?php echo $_ENV['HOST'].'/img/instructores/'.$instructor->imagen; ?>.png" type="image/png">
-                <img src="<?php echo $_ENV['HOST'].'/img/instructores/'.$instructor->imagen; ?>.png" alt="Imagen Ponente">
+                <source srcset="<?php echo $_ENV['HOST'] . '/img/instructores/' . $instructor->imagen; ?>.png"
+                    type="image/png">
+                <img src="<?php echo $_ENV['HOST'] . '/img/instructores/' . $instructor->imagen; ?>.png"
+                    alt="Imagen Ponente">
 
             </picture>
         </div>

@@ -58,11 +58,11 @@ class RegistroController
             $token = substr(md5(uniqid(rand(), true)), 0, 8);
 
             //crear registros
-            $datos = array(
+            $datos = [
                 'paquete_id' => 1,
                 'token' => $token,
                 'usuario_id' => $_SESSION['id']
-            );
+            ];
 
 
             $registro = new Registro($datos);
@@ -143,14 +143,20 @@ class RegistroController
             return;
         }
 
-        // $usuario_id = $_SESSION['id'];
-        // $registro = Registro::where('usuario_id', $usuario_id);
+        $usuario_id = $_SESSION['id'];
+        $registro = Registro::where('usuario_id', $usuario_id);
 
-        // //Redireccionar a boleto si ya esta registrado
-        // if (!isset($registro->usuario_id)) {
-        //     header('Location: /boleto?id=' . urlencode($registro->token));
-        //     return;
-        // }   
+        //Redireccionar a boleto si ya tiene un evento registrado
+        if (!$registro) {
+            header('Location: /boleto?id=' . urlencode($registro->token));
+            return;
+        } else if ($registro) {
+            $eventos_registrados = EventosRegistros::where('registro_id', $registro->id);
+            if ($eventos_registrados) {
+                header('Location: /perfil');
+                return;
+            }
+        }
 
         $eventos = Evento::ordenar('hora_id', 'ASC');
 
@@ -220,16 +226,14 @@ class RegistroController
 
                 $registro_usuario = new EventosRegistros($datos);
                 $resultado = $registro_usuario->guardar();
-                if ($resultado) {
-                    echo json_encode(['resultado' => $resultado, 'token' => $registro->token]);
-                    return;
-                } else {
-                    echo json_encode(['resultado' => false]);
-                    return;
-                }
-
             }
-            return;
+            if ($resultado) {
+                echo json_encode(['resultado' => $resultado, 'token' => $registro->token]);
+                return;
+            } else {
+                echo json_encode(['resultado' => false]);
+                return;
+            }
 
 
         }

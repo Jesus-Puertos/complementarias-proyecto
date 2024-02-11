@@ -71,6 +71,7 @@
             border-radius: 1rem;
         }
         
+        
     }
 
     &__icono{
@@ -108,6 +109,10 @@
         font-size: 1.4rem;
         @include m.tablet{
         width: auto;        
+        }
+
+        &--descarga{
+           margin-top: 2rem;
         }
     }
 
