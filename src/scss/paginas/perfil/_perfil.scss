@@ -63,16 +63,16 @@
 
     &__datos{
         width: auto;
-        width: min(100%, 60rem);
+        width: min(100%, 40rem);
         display: flex;
+        flex-wrap: wrap;
        justify-content: center;  
-       flex-direction: column;  
+       flex-direction: column; 
+         gap: 1.5rem; 
        @include m.tablet{
-           flex-direction: row;
-           flex-wrap: wrap;
-           justify-content: space-evenly;
+           flex-direction: column;
        }
-       column-gap: 2rem;
+       margin-bottom: 2rem;
     }
 
     &__dato{
@@ -81,15 +81,17 @@
         align-items: center;
         gap: 2rem;
         padding: 1rem 2rem;
-        border-bottom: 1px solid v.$gris;
-        &:last-child{
-            border-bottom: none;
-        }
+        border: 1px solid v.$gris;
+        border-radius: 9999px;
         &--titulo{
             font-size: 1.8rem;
             font-weight: 700;
             color: v.$gris;
             margin: 2rem 0;
+        }
+        &:hover{
+            background-color: v.$gris-claro;
+            color: v.$negro;
         }
     }
 

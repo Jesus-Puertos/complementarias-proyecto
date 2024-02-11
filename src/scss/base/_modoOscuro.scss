@@ -144,3 +144,11 @@ body.active .perfil__info{
    color: v.$blanco;
 }
 
+body.active .perfil__dato{
+   background-color: v.$componentes;
+   color: v.$blanco;
+   &:hover{
+      background-color: darken(v.$componentes, 2%);
+   }
+}
+

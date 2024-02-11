@@ -71,6 +71,7 @@
                         <?php echo $usuario->genero; ?>
                     </span>
                 </div>
+
             </div>
 
             <picture>
@@ -81,7 +82,6 @@
             </picture>
         </div>
 
-    </section>
 
 
 </main>

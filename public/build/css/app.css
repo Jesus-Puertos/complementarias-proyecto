@@ -544,6 +544,14 @@ body.active .perfil__info {
   color: #FFFFFF;
 }
 
+body.active .perfil__dato {
+  background-color: #20252C;
+  color: #FFFFFF;
+}
+body.active .perfil__dato:hover {
+  background-color: #1c2026;
+}
+
 /*Contenedor*/
 .auth {
   width: min(95%, 60rem);
@@ -1672,17 +1680,17 @@ body.active .perfil__info {
 }
 .perfil__datos {
   width: auto;
-  width: min(100%, 60rem);
+  width: min(100%, 40rem);
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   flex-direction: column;
-  column-gap: 2rem;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
 }
 @media (min-width: 768px) {
   .perfil__datos {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    flex-direction: column;
   }
 }
 .perfil__dato {
@@ -1691,16 +1699,18 @@ body.active .perfil__info {
   align-items: center;
   gap: 2rem;
   padding: 1rem 2rem;
-  border-bottom: 1px solid #64748B;
-}
-.perfil__dato:last-child {
-  border-bottom: none;
+  border: 1px solid #64748B;
+  border-radius: 9999px;
 }
 .perfil__dato--titulo {
   font-size: 1.8rem;
   font-weight: 700;
   color: #64748B;
   margin: 2rem 0;
+}
+.perfil__dato:hover {
+  background-color: #F8FAFC;
+  color: #1a1b15;
 }
 
 .formulario {
