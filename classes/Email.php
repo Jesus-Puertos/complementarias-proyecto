@@ -63,6 +63,8 @@ class Email
         $mail->Port = $_ENV['EMAIL_PORT'];
         $mail->Username = $_ENV['EMAIL_USER'];
         $mail->Password = $_ENV['EMAIL_PASS'];
+        $mail->SMTPSecure = 'tls';
+
 
         $mail->setFrom('complementarias@zongolica.tecnm.mx');
         $mail->addAddress($this->email, $this->nombre);
